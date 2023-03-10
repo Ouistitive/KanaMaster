@@ -4,13 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import jdbc.Connexion;
+import jdbc.ConnexionBD;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        new Connexion().connexionBD();
+        new ConnexionBD().connexionBD();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
