@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">KanaMaster</string>
+
+    <string name="inscrire"><u>S\'inscrire</u></string>
+    <string name="connecter"><u>Se connecter</u></string>
+
+    <string name="erreur_champ_non_rempli">"Un champ n'a pas été rempli."</string>
+    <string name="erreur_mot_de_passe_different">"Le mot de passe est différent de la confirmation"</string>
+    <string name="erreur_nom_utilisateur_existe">"Cet utilisateur existe déjà"</string>
+    <string name="erreur_connexion">"Le nom d'utilisateur ne correspond pas au mot de passe."</string>
 </resources>

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ConnexionActivity">
+    tools:context=".InscriptionActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Connexion"
+        android:text="Inscription"
         android:layout_marginTop="120dp"
         android:textSize="30sp"
         />
@@ -20,11 +21,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Nom d'utilisateur"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="220dp"
         android:height="48dp"
         android:width="150dp"
         android:textAlignment="center"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="240dp"
         />
 
     <EditText
@@ -33,10 +34,21 @@
         android:layout_height="wrap_content"
         android:hint="Mot de passe"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="310dp"
+        android:layout_marginTop="290dp"
         android:height="48dp"
         android:width="150dp"
-        android:inputType="textPassword"
+        android:textAlignment="center"
+        />
+
+    <EditText
+        android:id="@+id/motDePasseConfirmation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Confirmation"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="360dp"
+        android:height="48dp"
+        android:width="150dp"
         android:textAlignment="center"
         />
 
@@ -47,24 +59,24 @@
         android:text=""
         android:textColor="@color/couleur_principale_rouge"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="460dp"
         android:textSize="15sp"
         />
 
     <Button
-        android:id="@+id/connecter"
+        android:id="@+id/sinscrire"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Se connecter"
+        android:text="S'inscrire"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="450dp"
         />
 
     <TextView
-        android:id="@+id/inscrire"
+        android:id="@+id/connecter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/inscrire"
+        android:text="@string/connecter"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="550dp"
         android:textSize="20sp"
