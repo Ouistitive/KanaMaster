@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="center"
+            android:layout_marginTop="100dp"
             >
 
             <TextView
@@ -30,6 +31,7 @@
                 />
 
             <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/tableauHiragana"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="100dp"
@@ -51,7 +53,6 @@
                         android:layout_weight="1"
                         android:text="Score" />
                 </TableRow>
-
             </TableLayout>
 
             <TextView
@@ -64,6 +65,31 @@
                 android:layout_marginTop="100dp"
                 />
 
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/tableauKatakana"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="100dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TableRow
+                    android:background="#0079D6"
+                    android:padding="5dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Pseudo" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Score" />
+                </TableRow>
+            </TableLayout>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -73,6 +99,31 @@
                 android:textSize="30dp"
                 android:layout_marginTop="100dp"
                 />
+
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/tableauKana"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="100dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TableRow
+                    android:background="#0079D6"
+                    android:padding="5dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Pseudo" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Score" />
+                </TableRow>
+            </TableLayout>
 
         </LinearLayout>
 
