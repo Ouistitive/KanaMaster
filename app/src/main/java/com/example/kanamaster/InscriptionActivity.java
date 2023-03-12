@@ -92,6 +92,10 @@ public class InscriptionActivity extends AppCompatActivity {
      */
     private void changerActivite(Class<? extends AppCompatActivity> activite) {
         Intent intent = new Intent(InscriptionActivity.this, activite);
+
+        if(activite == MainActivity.class)
+            intent.putExtra("nomU", nomUtilisateur.getText().toString());
+
         startActivity(intent);
         finish();
     }

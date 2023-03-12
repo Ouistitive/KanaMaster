@@ -14,7 +14,40 @@
         android:text="Votre score : "
         android:textSize="25dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="150dp"
+        />
+
+    <TextView
+        android:id="@+id/texteMeilleurScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ancien record : "
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        />
+
+    <TextView
+        android:id="@+id/texteCommentaire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="360dp"
+        />
+
+    <Button
+        android:id="@+id/boutonRejouer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rejouer"
+        android:layout_centerHorizontal="true"
+        android:letterSpacing="0.4"
+        android:layout_marginTop="470dp"
+        android:height="55dp"
+        android:width="150dp"
         />
 
 </RelativeLayout>

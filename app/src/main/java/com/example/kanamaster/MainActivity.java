@@ -12,11 +12,15 @@ import jeu.kana.TypeKana;
 public class MainActivity extends AppCompatActivity {
 
     private Button boutonHiragana, boutonKatakana, boutonDeux; // Les Buttons pour le choix du type de kanas a deviner
+    private String nomUtilisateur;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Bundle extras = getIntent().getExtras();
+        nomUtilisateur = extras.getString("nomU");
 
         boutonHiragana = (Button) findViewById(R.id.boutonHiragana);
         boutonKatakana = (Button) findViewById(R.id.boutonKatakana);
@@ -51,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
     private void lancerJeu(TypeKana type) {
         Intent intent = new Intent(MainActivity.this, JeuActivity.class);
         intent.putExtra("type", type);
+        intent.putExtra("nomU", nomUtilisateur);
         startActivity(intent);
         finish();
     }

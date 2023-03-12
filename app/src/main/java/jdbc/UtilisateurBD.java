@@ -54,6 +54,38 @@ public class UtilisateurBD {
         return valide;
     }
 
+    public static int recupererMeilleurScore(String nomU) {
+        int score = 0;
+        st = ConnexionBD.connexionBD();
+
+        try {
+            ResultSet rs = st.executeQuery("SELECT MeilleurScore FROM Utilisateur WHERE nomUtilisateur = '" + nomU + "'");
+             if(rs.next()) {
+                 score = rs.getInt("MeilleurScore");
+             }
+
+        }
+        catch(SQLException e) {
+            e.printStackTrace();
+        }
+
+        ConnexionBD.fermer();
+        return score;
+    }
+
+    public static void insererNouveauRecord(String nomU, int score) {
+        st = ConnexionBD.connexionBD();
+
+        try {
+            st.executeUpdate("UPDATE Utilisateur SET MeilleurScore = " + score + " WHERE nomUtilisateur = '" + nomU + "';");
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        ConnexionBD.fermer();
+    }
+
     /**
      * @brief Ajoute un nouvel utilisateur dans la base de donnees
      * @param nomU : Le nom utilisateur
@@ -63,7 +95,7 @@ public class UtilisateurBD {
         st = ConnexionBD.connexionBD();
 
         try {
-            st.executeUpdate("INSERT INTO Utilisateur VALUES ('" + nomU + "', '" + mdp + "');");
+            st.executeUpdate("INSERT INTO Utilisateur VALUES ('" + nomU + "', '" + mdp + "', 0);");
 
         }
         catch (SQLException e) {

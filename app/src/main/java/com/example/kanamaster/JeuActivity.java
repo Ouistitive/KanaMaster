@@ -186,8 +186,12 @@ public class JeuActivity extends AppCompatActivity {
      * @brief Envoie à la prochaine activite pour afficher le score du joueur
      */
     private void changerActivite() {
+        Bundle extras = getIntent().getExtras();
+        String nomUtilisateur = extras.getString("nomU");
+
         Intent intent = new Intent(JeuActivity.this, ScoreActivity.class);
         intent.putExtra("score", scoreJoueur);
+        intent.putExtra("nomU", nomUtilisateur);
         startActivity(intent);
         finish();
     }
