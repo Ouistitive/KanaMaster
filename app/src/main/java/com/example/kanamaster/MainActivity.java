@@ -7,8 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import jdbc.ConnexionBD;
-import jeu.TypeKana;
+import jeu.kana.TypeKana;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,11 +1,11 @@
 package jeu;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import jdbc.KanaBD;
+import jeu.kana.Kana;
+import jeu.kana.TypeKana;
 
 public class BuilderKana {
 

@@ -9,6 +9,6 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="couleur_principale_rouge">#BB0000</color>
-    <color name="couleur_principale_noir">#222222</color>
-    <color name="couleur_principale_blanc">#FFFFFF</color>
+    <color name="couleur_principale_noir">#2B2B2B</color>
+    <color name="couleur_principale_blanc">#F0F0F0</color>
 </resources>

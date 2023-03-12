@@ -1,4 +1,6 @@
-package jeu;
+package jeu.kana;
+
+import jeu.kana.TypeKana;
 
 public class Kana {
     private String symbole; // Le symbole japonais du Kana

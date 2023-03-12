@@ -4,15 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/couleur_principale_blanc"
     tools:context=".JeuActivity">
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score : 0"
+        android:textSize="25dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        />
+
+    <TextView
+        android:id="@+id/chronometre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="xx:xx"
+        android:textSize="25dp"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="50dp"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trouvez quel est ce"
+        android:text="Quel est ce kana ?"
         android:layout_centerHorizontal="true"
         android:textSize="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="120dp"
         />
 
     <LinearLayout
