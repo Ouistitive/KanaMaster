@@ -11,7 +11,7 @@ import jeu.kana.TypeKana;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button boutonHiragana, boutonKatakana, boutonDeux; // Les Buttons pour le choix du type de kanas a deviner
+    private Button boutonHiragana, boutonKatakana, boutonDeux, boutonClassement; // Les Buttons pour le choix du type de kanas a deviner
     private String nomUtilisateur;
 
     @Override
@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         boutonHiragana = (Button) findViewById(R.id.boutonHiragana);
         boutonKatakana = (Button) findViewById(R.id.boutonKatakana);
         boutonDeux = (Button) findViewById(R.id.boutonDeux);
+        boutonClassement = (Button) findViewById(R.id.boutonClassement);
 
         boutonHiragana.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +47,13 @@ public class MainActivity extends AppCompatActivity {
                 lancerJeu(TypeKana.KANA);
             }
         });
+
+        boutonClassement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changerActiviteClassement();
+            }
+        });
     }
 
     /**
@@ -58,5 +66,14 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("nomU", nomUtilisateur);
         startActivity(intent);
         finish();
+    }
+
+    /**
+     * @brief Change d'activite pour afficher le classement
+     */
+    private void changerActiviteClassement() {
+        Intent intent = new Intent(MainActivity.this, ClassementActivity.class);
+        intent.putExtra("nomU", nomUtilisateur);
+        startActivity(intent);
     }
 }

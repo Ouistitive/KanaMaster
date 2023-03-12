@@ -119,13 +119,23 @@ public class JeuActivity extends AppCompatActivity {
     private void modifierBoutons() {
         Collections.shuffle(choix);
 
+        if(indice >= kanas.size()) {
+            reinitListe();
+        }
+
         // String.format permet de changer les %s par ce qu'il y a en parametres (comme les printf en C)
         choix.get(0).setText(String.format(strBouton, kanas.get(indice).getPrononciation(), kanas.get(indice).getType()));
+
         System.out.println(String.format(strBouton, kanas.get(indice).getPrononciation(), kanas.get(indice).getType()));
         for(int i = 1; i < choix.size(); i++) {
             int nb = randomAvecExclusion(random, 0, kanas.size()-1, indice);
             choix.get(i).setText(String.format(strBouton, kanas.get(nb).getPrononciation(), kanas.get(nb).getType()));
         }
+    }
+
+    private void reinitListe() {
+        indice = 0;
+        Collections.shuffle(kanas);
     }
 
     /**
@@ -192,6 +202,7 @@ public class JeuActivity extends AppCompatActivity {
         Intent intent = new Intent(JeuActivity.this, ScoreActivity.class);
         intent.putExtra("score", scoreJoueur);
         intent.putExtra("nomU", nomUtilisateur);
+        intent.putExtra("type", type);
         startActivity(intent);
         finish();
     }

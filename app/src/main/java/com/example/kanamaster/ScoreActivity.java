@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.lang.reflect.Type;
+
 import jdbc.UtilisateurBD;
 import jeu.kana.TypeKana;
 
@@ -29,30 +31,20 @@ public class ScoreActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         int score = extras.getInt("score");
         nomU = extras.getString("nomU");
-        int ancienScore = UtilisateurBD.recupererMeilleurScore(nomU);
+        TypeKana type = (TypeKana) extras.get("type");
+        int ancienScore = UtilisateurBD.recupererMeilleurScore(nomU, type);
 
         texteScore = (TextView) findViewById(R.id.texteScore);
         texteAncienScore = (TextView) findViewById(R.id.texteMeilleurScore);
         texteCommentaire = (TextView) findViewById(R.id.texteCommentaire);
         rejouer = (Button) findViewById(R.id.boutonRejouer);
 
-        String strScore = "Votre score : " + score;
-        SpannableString ss = new SpannableString(strScore);
-        SpannableStringBuilder ssb = new SpannableStringBuilder(strScore);
-        ForegroundColorSpan fcsRed = new ForegroundColorSpan(getColor(R.color.couleur_principale_rouge));
-        ssb.setSpan(fcsRed, 14, strScore.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        texteScore.setText(ssb);
-
-        String strAncienScore = "Votre ancien score : " + ancienScore;
-        ss = new SpannableString(strAncienScore);
-        ssb = new SpannableStringBuilder(strAncienScore);
-        fcsRed = new ForegroundColorSpan(getColor(R.color.couleur_principale_rouge));
-        ssb.setSpan(fcsRed, 21, strAncienScore.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        texteAncienScore.setText(ssb);
+        changerCouleurTexte("Votre score : " + score, texteScore, 14);
+        changerCouleurTexte("Votre ancien score : " + ancienScore, texteAncienScore, 21);
 
         if(ancienScore < score) {
             texteCommentaire.setText(R.string.commentaire_meilleur_score);
-            UtilisateurBD.insererNouveauRecord(nomU, score);
+            UtilisateurBD.insererNouveauRecord(nomU, score, type);
         }
         else {
             texteCommentaire.setText(R.string.commentaire_pas_meilleure_score);
@@ -67,5 +59,13 @@ public class ScoreActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    private void changerCouleurTexte(String texte, TextView tv, int deb) {
+        SpannableString ss = new SpannableString(texte);
+        SpannableStringBuilder ssb = new SpannableStringBuilder(texte);
+        ForegroundColorSpan fcsRed = new ForegroundColorSpan(getColor(R.color.couleur_principale_rouge));
+        ssb.setSpan(fcsRed, deb, texte.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        tv.setText(ssb);
     }
 }

@@ -4,6 +4,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import jeu.kana.TypeKana;
+
 public class UtilisateurBD {
     private static Statement st;
 
@@ -54,14 +56,19 @@ public class UtilisateurBD {
         return valide;
     }
 
-    public static int recupererMeilleurScore(String nomU) {
+    /**
+     * @brief Recupere le meilleur score d'un type donne d'un utilisateur
+     * @param nomU : le nom utilisateur
+     * @param type : la categorie du record
+     */
+    public static int recupererMeilleurScore(String nomU, TypeKana type) {
         int score = 0;
         st = ConnexionBD.connexionBD();
 
         try {
-            ResultSet rs = st.executeQuery("SELECT MeilleurScore FROM Utilisateur WHERE nomUtilisateur = '" + nomU + "'");
+            ResultSet rs = st.executeQuery("SELECT MeilleurScore" + type.toString() + " FROM Utilisateur WHERE nomUtilisateur = '" + nomU + "'");
              if(rs.next()) {
-                 score = rs.getInt("MeilleurScore");
+                 score = rs.getInt("MeilleurScore" + type.toString());
              }
 
         }
@@ -73,11 +80,11 @@ public class UtilisateurBD {
         return score;
     }
 
-    public static void insererNouveauRecord(String nomU, int score) {
+    public static void insererNouveauRecord(String nomU, int score, TypeKana type) {
         st = ConnexionBD.connexionBD();
 
         try {
-            st.executeUpdate("UPDATE Utilisateur SET MeilleurScore = " + score + " WHERE nomUtilisateur = '" + nomU + "';");
+            st.executeUpdate("UPDATE Utilisateur SET MeilleurScore" + type.toString() + " = " + score + " WHERE nomUtilisateur = '" + nomU + "';");
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -95,7 +102,7 @@ public class UtilisateurBD {
         st = ConnexionBD.connexionBD();
 
         try {
-            st.executeUpdate("INSERT INTO Utilisateur VALUES ('" + nomU + "', '" + mdp + "', 0);");
+            st.executeUpdate("INSERT INTO Utilisateur VALUES ('" + nomU + "', '" + mdp + "', 0, 0, 0);");
 
         }
         catch (SQLException e) {
