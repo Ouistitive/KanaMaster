@@ -3,6 +3,9 @@ package jdbc;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import jeu.kana.TypeKana;
 
@@ -110,5 +113,29 @@ public class UtilisateurBD {
         }
 
         ConnexionBD.fermer();
+    }
+
+    /**
+     * @brief Selectionne les 10 meilleurs scores dans une categorie donnee
+     * @param type : la categorie de kana
+     * @return Map<String, Integer> : le dictionnaire avec le pseudo et le score des 10 meilleurs joueurs
+     */
+    public static Map<String, Integer> selectionnerMeilleurScore(TypeKana type) {
+        st = ConnexionBD.connexionBD();
+        Map<String, Integer> map = new LinkedHashMap<>();
+
+        try {
+            ResultSet rs = st.executeQuery("SELECT nomUtilisateur, MeilleurScore" + type.toString() + " FROM Utilisateur ORDER BY MeilleurScore" + type.toString() + " DESC LIMIT 10");
+            while(rs.next()) {
+                String s = rs.getString("nomUtilisateur");
+                map.put(s, rs.getInt("MeilleurScore" + type.toString()));
+                System.out.println(s);
+            }
+        }
+        catch(SQLException e) {
+            e.printStackTrace();
+        }
+
+        return map;
     }
 }
