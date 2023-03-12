@@ -22,6 +22,10 @@ public class ConnexionBD {
 
     private static Connection connexion;
 
+    /**
+     * @brief Se connecte a la base de donnees, cree un statement
+     * @return Statement : le statement pour faire des requetes SQL
+     */
     public static Statement connexionBD() {
         Statement st = null;
 
@@ -36,6 +40,9 @@ public class ConnexionBD {
         return st;
     }
 
+    /**
+     * Ferme la connexion a la base de donnees
+     */
     public static void fermer() {
         try {
             connexion.close();

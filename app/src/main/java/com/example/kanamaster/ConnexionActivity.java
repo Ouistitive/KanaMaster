@@ -15,9 +15,9 @@ import jdbc.UtilisateurBD;
 
 public class ConnexionActivity extends AppCompatActivity {
 
-    private EditText nomUtilisateur, motDePasse;
-    private TextView texteErreur, texteInscrire;
-    private Button seConnecter;
+    private EditText nomUtilisateur, motDePasse; // Les EditText pour saisir le nom utilisateur et mot de passe
+    private TextView texteErreur, texteInscrire; // Les TextView pour le message d'erreur et le texte cliquable pour s'inscrire
+    private Button seConnecter; // Button qui permet de s'identifier
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,10 @@ public class ConnexionActivity extends AppCompatActivity {
         texteInscrire = (TextView) findViewById(R.id.inscrire);
 
         seConnecter.setOnClickListener(new View.OnClickListener() {
+            /**
+             * @brief Lors du clique, verifie la validite des EditText, verifie si l'utilisateur
+             * existe dans la BD et si son mot de passe est correcte
+             */
             @Override
             public void onClick(View view) {
                 if(!verification()) {
@@ -64,12 +68,16 @@ public class ConnexionActivity extends AppCompatActivity {
     }
 
     /**
-     * On verifie que les champs ont bien ete remplis
+     * @brief Verifie que le nom d'utilisateur et le mot de passe sont differents de vide
      */
     private boolean verification() {
         return !(nomUtilisateur.getText().toString().equals("") || motDePasse.getText().toString().equals(""));
     }
 
+    /**
+     * @brief Change d'activite et supprime l'ancienne
+     * @param activite : la nouvelle activite a afficher
+     */
     private void changerActivite(Class<? extends AppCompatActivity> activite) {
         Intent intent = new Intent(ConnexionActivity.this, activite);
         startActivity(intent);

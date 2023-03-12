@@ -8,10 +8,11 @@ import android.view.View;
 import android.widget.Button;
 
 import jdbc.ConnexionBD;
+import jeu.TypeKana;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button boutonHiragana, boutonKatakana, boutonDeux;
+    private Button boutonHiragana, boutonKatakana, boutonDeux; // Les Buttons pour le choix du type de kanas a deviner
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,26 +26,30 @@ public class MainActivity extends AppCompatActivity {
         boutonHiragana.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                lancerJeu("Hiragana");
+                lancerJeu(TypeKana.HIRAGANA);
             }
         });
 
         boutonKatakana.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                lancerJeu("Katakana");
+                lancerJeu(TypeKana.KATAKANA);
             }
         });
 
         boutonDeux.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                lancerJeu("Kana");
+                lancerJeu(TypeKana.KANA);
             }
         });
     }
 
-    private void lancerJeu(String type) {
+    /**
+     * @brief Lance le jeu et envoie le type de kana
+     * @param type : Le type de kana a deviner
+     */
+    private void lancerJeu(TypeKana type) {
         Intent intent = new Intent(MainActivity.this, JeuActivity.class);
         intent.putExtra("type", type);
         startActivity(intent);

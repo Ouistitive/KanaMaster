@@ -7,6 +7,11 @@ import java.sql.Statement;
 public class UtilisateurBD {
     private static Statement st;
 
+    /**
+     * @brief Verifie a partir d'un nom utilisateur et un mot de passe si il est dans la base de donnees
+     * @param nomU : Le nom utilisateur
+     * @param mdp : Le mot de passe
+     */
     public static boolean identification(String nomU, String mdp) {
         boolean valide = false;
         st = ConnexionBD.connexionBD();
@@ -26,28 +31,11 @@ public class UtilisateurBD {
         return valide;
     }
 
-    public static String t() {
-        String s = null;
-        st = ConnexionBD.connexionBD();
-
-        try{
-            ResultSet res = st.executeQuery("SELECT * FROM alphabet;");
-            if(res.next()) {
-                String motDePasse = res.getString(1);
-                s = motDePasse;
-            }
-        }
-        catch(SQLException e) {
-            e.printStackTrace();
-        }
-
-        ConnexionBD.fermer();
-        return s;
-    }
-
     /**
-     * Retourne si le nom d'utilisateur est valide ou non
-     * Il est valide si le nom n'a pas encore ete utilise
+     * @brief Retourne si le nom d'utilisateur est valide ou non, il est valide si le nom n'a pas encore ete utilise
+     * @param nomU : le nom utilisateur
+     * @return true : le nom utilisateur n'existe pas
+     * @return false : le nom utilisateur existe deja
      */
     public static boolean nomUtilisateurValide(String nomU) {
         boolean valide = false;
@@ -66,6 +54,11 @@ public class UtilisateurBD {
         return valide;
     }
 
+    /**
+     * @brief Ajoute un nouvel utilisateur dans la base de donnees
+     * @param nomU : Le nom utilisateur
+     * @param mdp : le mot de passe
+     */
     public static void insererUtilisateur(String nomU, String mdp) {
         st = ConnexionBD.connexionBD();
 
@@ -76,5 +69,7 @@ public class UtilisateurBD {
         catch (SQLException e) {
             e.printStackTrace();
         }
+
+        ConnexionBD.fermer();
     }
 }
