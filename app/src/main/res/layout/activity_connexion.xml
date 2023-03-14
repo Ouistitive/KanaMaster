@@ -7,59 +7,79 @@
     android:background="@color/couleur_principale_blanc"
     tools:context=".ConnexionActivity">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/rectangle" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="Connexion"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="40dp"
         android:textSize="30sp"
         />
 
-    <EditText
-        android:id="@+id/nomUtilisateur"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nom d'utilisateur"
-        android:height="48dp"
-        android:width="150dp"
-        android:textAlignment="center"
+        android:orientation="vertical"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="240dp"
-        />
+        android:layout_marginTop="120dp"
+        android:gravity="center">
 
-    <EditText
-        android:id="@+id/motDePasse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Mot de passe"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="310dp"
-        android:height="48dp"
-        android:width="150dp"
-        android:inputType="textPassword"
-        android:textAlignment="center"
-        />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="232dp"
+            android:layout_height="126dp"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/kanamaster_logo" />
 
-    <TextView
-        android:id="@+id/texteErreur"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textColor="@color/couleur_principale_rouge"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="400dp"
-        android:textSize="15sp"
-        />
+        <EditText
+            android:id="@+id/nomUtilisateur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Nom d'utilisateur"
+            android:height="48dp"
+            android:width="150dp"
+            android:layout_marginTop="40dp"
+            android:textAlignment="center"
+            />
 
-    <Button
-        android:id="@+id/connecter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Se connecter"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="450dp"
-        />
+        <EditText
+            android:id="@+id/motDePasse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Mot de passe"
+            android:layout_marginTop="30dp"
+            android:height="48dp"
+            android:width="150dp"
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            />
+
+        <TextView
+            android:id="@+id/texteErreur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:gravity="center"
+            android:textColor="@color/couleur_principale_rouge"
+            android:layout_marginTop="40dp"
+            android:textSize="15sp"
+            />
+
+        <Button
+            android:id="@+id/connecter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="160dp"
+            android:height="55dp"
+            android:text="Se connecter"
+            android:layout_marginTop="30dp"
+            />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/inscrire"
@@ -67,7 +87,7 @@
         android:layout_height="wrap_content"
         android:text="@string/inscrire"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="550dp"
+        android:layout_marginTop="590dp"
         android:textSize="20sp"
         />
 </RelativeLayout>
