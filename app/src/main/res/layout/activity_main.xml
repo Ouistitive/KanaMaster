@@ -7,13 +7,19 @@
     android:background="@color/couleur_principale_blanc"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="222dp"
-        android:layout_height="311dp"
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/rectangle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="-90dp"
-        app:srcCompat="@drawable/kanamaster_logo" />
+        android:text="Mode de jeu"
+        android:layout_marginTop="40dp"
+        android:textSize="30sp"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,7 +27,7 @@
         android:text="Choisissez votre catégorie de jeu"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="160dp"
-        android:textSize="20dp"
+        android:textSize="20sp"
         />
 
     <LinearLayout
@@ -29,36 +35,44 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/boutonHiragana"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hiragana"
-            android:letterSpacing="0.5"
-            android:layout_marginBottom="40dp"
-            android:height="55dp"
-            />
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/boutonKatakana"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Katakana"
-            android:letterSpacing="0.5"
-            android:layout_marginBottom="40dp"
-            android:height="55dp"
-            />
+            <Button
+                android:id="@+id/boutonHiragana"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:width="170dp"
+                android:text="Hiragana"
+                android:letterSpacing="0.5"
+                android:layout_marginRight="10dp"
+                android:height="60dp"
+                />
+
+            <Button
+                android:id="@+id/boutonKatakana"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:width="170dp"
+                android:text="Katakana"
+                android:letterSpacing="0.5"
+                android:height="60dp"
+                />
+        </LinearLayout>
 
         <Button
             android:id="@+id/boutonDeux"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:width="230dp"
+            android:layout_gravity="center"
             android:text="Les deux"
             android:letterSpacing="0.5"
-            android:height="55dp"
+            android:height="60dp"
             />
     </LinearLayout>
 
@@ -68,8 +82,15 @@
         android:layout_height="wrap_content"
         android:text="Classement"
         android:letterSpacing="0.5"
-        android:height="55dp"
+        android:height="60dp"
         android:layout_marginTop="550dp"
         android:layout_centerHorizontal="true"
         />
+
+    <ImageView
+        android:id="@+id/boutonDeconnexion"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="120dp"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
 </RelativeLayout>

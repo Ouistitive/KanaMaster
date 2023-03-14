@@ -59,12 +59,7 @@ public class JeuActivity extends AppCompatActivity {
 
         texteScore = (TextView) findViewById(R.id.score);
         scoreJoueur = 0;
-        String text = "Score : " + scoreJoueur;
-        SpannableString ss = new SpannableString(text);
-        SpannableStringBuilder ssb = new SpannableStringBuilder(text);
-        ForegroundColorSpan fcsRed = new ForegroundColorSpan(getColor(R.color.couleur_principale_rouge));
-        ssb.setSpan(fcsRed, 7, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        texteScore.setText(ssb);
+        mettreAJourScoreJoueur();
 
         // Stocke les boutons dans une liste
         choix = new ArrayList<>();
@@ -80,14 +75,7 @@ public class JeuActivity extends AppCompatActivity {
                     if(verification(b.getText().toString())) {
                         scoreJoueur++;
 
-                        // Ajoute un au score du joueur sur le TextView et affiche le score en rouge
-                        String text = "Score : " + scoreJoueur;
-
-                        SpannableString ss = new SpannableString(text);
-                        SpannableStringBuilder ssb = new SpannableStringBuilder(text);
-                        ForegroundColorSpan fcsRed = new ForegroundColorSpan(getColor(R.color.couleur_principale_rouge));
-                        ssb.setSpan(fcsRed, 7, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                        texteScore.setText(ssb);
+                        mettreAJourScoreJoueur();
                     }
                     else
                         System.out.println("C PAS GOOD");
@@ -111,6 +99,15 @@ public class JeuActivity extends AppCompatActivity {
         lancerChronometre();
 
         modifierBoutons();
+    }
+
+    private void mettreAJourScoreJoueur() {
+        String text = "Score : " + scoreJoueur;
+        SpannableString ss = new SpannableString(text);
+        SpannableStringBuilder ssb = new SpannableStringBuilder(text);
+        ForegroundColorSpan fcsRed = new ForegroundColorSpan(getColor(R.color.couleur_principale_rouge));
+        ssb.setSpan(fcsRed, 7, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        texteScore.setText(ssb);
     }
 
     /**

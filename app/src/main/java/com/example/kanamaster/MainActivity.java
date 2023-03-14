@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import jeu.kana.TypeKana;
 
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button boutonHiragana, boutonKatakana, boutonDeux, boutonClassement; // Les Buttons pour le choix du type de kanas a deviner
     private String nomUtilisateur;
+    private ImageView boutonDeconnexion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         boutonKatakana = (Button) findViewById(R.id.boutonKatakana);
         boutonDeux = (Button) findViewById(R.id.boutonDeux);
         boutonClassement = (Button) findViewById(R.id.boutonClassement);
+        boutonDeconnexion = (ImageView) findViewById(R.id.boutonDeconnexion);
 
         boutonHiragana.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
                 changerActiviteClassement();
             }
         });
+
+        boutonDeconnexion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changerActiviteDeconnexion();
+            }
+        });
     }
 
     /**
@@ -75,5 +85,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, ClassementActivity.class);
         intent.putExtra("nomU", nomUtilisateur);
         startActivity(intent);
+    }
+
+    private void changerActiviteDeconnexion() {
+        Intent intent = new Intent(MainActivity.this, ConnexionActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

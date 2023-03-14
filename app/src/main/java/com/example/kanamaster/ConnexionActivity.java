@@ -13,6 +13,7 @@ import android.os.Build;
 import android.widget.TextView;
 
 import jdbc.UtilisateurBD;
+import jeu.kana.TypeKana;
 
 public class ConnexionActivity extends AppCompatActivity {
 
@@ -22,7 +23,6 @@ public class ConnexionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connexion);
 
