@@ -36,20 +36,23 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="100dp"
                 android:paddingLeft="10dp"
-                android:paddingRight="10dp">
+                android:paddingRight="10dp"
+                android:textAlignment="center"
+                android:background="#0079D6">
 
                 <TableRow
-                    android:background="#0079D6"
                     android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     >
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="Pseudo" />
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="Score" />
                 </TableRow>
@@ -71,10 +74,10 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="100dp"
                 android:paddingLeft="10dp"
-                android:paddingRight="10dp">
+                android:paddingRight="10dp"
+                android:background="#0079D6">
 
                 <TableRow
-                    android:background="#0079D6"
                     android:padding="5dp"
                     >
                     <TextView
@@ -106,10 +109,10 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="100dp"
                 android:paddingLeft="10dp"
-                android:paddingRight="10dp">
+                android:paddingRight="10dp"
+                android:background="#0079D6">
 
                 <TableRow
-                    android:background="#0079D6"
                     android:padding="5dp"
                     >
                     <TextView

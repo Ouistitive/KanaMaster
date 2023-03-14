@@ -7,12 +7,20 @@
     android:background="@color/couleur_principale_blanc"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="222dp"
+        android:layout_height="311dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-90dp"
+        app:srcCompat="@drawable/kanamaster_logo" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Choisissez"
+        android:text="Choisissez votre catégorie de jeu"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="160dp"
         android:textSize="20dp"
         />
 
@@ -30,8 +38,8 @@
             android:layout_height="wrap_content"
             android:text="Hiragana"
             android:letterSpacing="0.5"
-            android:layout_marginBottom="30dp"
-            android:height="50dp"
+            android:layout_marginBottom="40dp"
+            android:height="55dp"
             />
 
         <Button
@@ -40,8 +48,8 @@
             android:layout_height="wrap_content"
             android:text="Katakana"
             android:letterSpacing="0.5"
-            android:layout_marginBottom="30dp"
-            android:height="50dp"
+            android:layout_marginBottom="40dp"
+            android:height="55dp"
             />
 
         <Button
@@ -50,7 +58,7 @@
             android:layout_height="wrap_content"
             android:text="Les deux"
             android:letterSpacing="0.5"
-            android:height="50dp"
+            android:height="55dp"
             />
     </LinearLayout>
 
@@ -60,9 +68,8 @@
         android:layout_height="wrap_content"
         android:text="Classement"
         android:letterSpacing="0.5"
-        android:height="50dp"
+        android:height="55dp"
         android:layout_marginTop="550dp"
         android:layout_centerHorizontal="true"
         />
-
 </RelativeLayout>

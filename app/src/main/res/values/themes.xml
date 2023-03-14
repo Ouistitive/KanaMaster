@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.KanaMaster" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.KanaMaster" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/couleur_principale_rouge</item>
         <item name="colorPrimaryVariant">@color/couleur_principale_noir</item>
