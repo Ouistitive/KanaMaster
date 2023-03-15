@@ -36,6 +36,15 @@
         android:layout_marginTop="120dp"
         />
 
+    <ImageView
+        android:id="@+id/imageKana"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="220dp"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/hiragana_a" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"

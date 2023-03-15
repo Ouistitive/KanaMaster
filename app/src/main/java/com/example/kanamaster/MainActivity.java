@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import kanamaster.kana.TypeKana;
 
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private Button boutonHiragana, boutonKatakana, boutonDeux, boutonClassement; // Les Buttons pour le choix du type de kanas a deviner
     private String nomUtilisateur;
     private ImageView boutonDeconnexion;
+    private TextView texteBienvenue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
         boutonDeux = (Button) findViewById(R.id.boutonDeux);
         boutonClassement = (Button) findViewById(R.id.boutonClassement);
         boutonDeconnexion = (ImageView) findViewById(R.id.boutonDeconnexion);
+        texteBienvenue = (TextView) findViewById(R.id.texteBienvenue);
+
+        texteBienvenue.setText("Bonjour " + nomUtilisateur + " !");
 
         boutonHiragana.setOnClickListener(new View.OnClickListener() {
             @Override

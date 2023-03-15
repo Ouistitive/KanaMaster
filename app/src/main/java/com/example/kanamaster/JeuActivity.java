@@ -3,8 +3,12 @@ package com.example.kanamaster;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContextWrapper;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.SpannableString;
@@ -13,6 +17,7 @@ import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -28,6 +33,7 @@ public class JeuActivity extends AppCompatActivity {
     private List<Button> choix; // Liste des boutons de choix
     private String strBouton, strScore; // Chaine de caracteres parametree pour le texte dans les boutons et pour le score
     private TextView texteChrono, texteScore; // TextView pour le chronometre du jeu
+    private ImageView imageKana;
     private KanaMasterJeu kanaMaster;
     ForegroundColorSpan fcsRed;
 
@@ -41,7 +47,9 @@ public class JeuActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         type = (TypeKana) extras.get("type");
 
-        kanaMaster = new KanaMasterJeu(type);
+        imageKana = (ImageView) findViewById(R.id.imageKana);
+
+        kanaMaster = new KanaMasterJeu(type, imageKana);
 
         // On initialise les chaines
         strBouton = "%s (%s)";
@@ -77,12 +85,10 @@ public class JeuActivity extends AppCompatActivity {
         }
 
         texteChrono = (TextView) findViewById(R.id.chronometre);
-
-
-
         lancerChronometre();
-
         modifierBoutons();
+
+        //test();
     }
 
     private void mettreAJourScoreJoueur() {
@@ -98,8 +104,16 @@ public class JeuActivity extends AppCompatActivity {
      */
     private void modifierBoutons() {
         Collections.shuffle(choix);
-
         kanaMaster.modifierBouton(choix, strBouton);
+        modifierImage();
+    }
+
+    private void modifierImage() {
+        Resources res = getResources();
+        String mDrawableName = kanaMaster.getNomKana();
+        int resID = res.getIdentifier(mDrawableName, "drawable", getPackageName());
+        Drawable drawable = res.getDrawable(resID);
+        imageKana.setImageDrawable(drawable);
     }
 
     /**
@@ -124,6 +138,12 @@ public class JeuActivity extends AppCompatActivity {
 
         }.start();
     }
+
+    /*private void test() {
+        Resources res = getResources();
+        String str = getPackageName();
+        kanaMaster.test(res, str);
+    }*/
 
     /**
      * @brief Envoie à la prochaine activite pour afficher le score du joueur

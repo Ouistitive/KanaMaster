@@ -1,6 +1,9 @@
 package kanamaster.jeu;
 
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import java.util.Collections;
 import java.util.List;
@@ -12,17 +15,19 @@ import kanamaster.kana.TypeKana;
 
 public class KanaMasterJeu {
     private TypeKana type; // Type de kana qui sera devine
+    private ImageView imageKana;
     private int indice; // indice du kana a trouver
     private List<Kana> kanas; // Liste des kanas
     private Random random; // La graine aleatoire du jeu
     private int scoreJoueur;
 
 
-    public KanaMasterJeu(TypeKana type) {
+    public KanaMasterJeu(TypeKana type, ImageView imageKana) {
         this.type = type;
         this.random = new Random();
         this.indice = 0;
         this.scoreJoueur = 0;
+        this.imageKana = imageKana;
 
         kanas = BuilderKana.prepareKana(this.type);
         Collections.shuffle(kanas);
@@ -39,6 +44,7 @@ public class KanaMasterJeu {
 
         // String.format permet de changer les %s par ce qu'il y a en parametres (comme les printf en C)
         boutons.get(0).setText(String.format(strFormatBouton, kanas.get(indice).getPrononciation(), kanas.get(indice).getType()));
+        //imageKana.setBackgroundResource("@drawable/");
 
         System.out.println(String.format(strFormatBouton, kanas.get(indice).getPrononciation(), kanas.get(indice).getType()));
         for(int i = 1; i < boutons.size(); i++) {
@@ -65,6 +71,10 @@ public class KanaMasterJeu {
         return String.format(strFormatBouton, kanas.get(indice).getPrononciation(), kanas.get(indice).getType()).equals(texte);
     }
 
+    public String getNomKana() {
+        return type.toString().toLowerCase() + "_" + kanas.get(indice).getPrononciation().toLowerCase();
+    }
+
     /**
      * @brief Reinitialise la liste et melange les kanas
      */
@@ -87,4 +97,17 @@ public class KanaMasterJeu {
             random++;
         return random;
     }
+
+    /*
+    public void test(Resources r, String s) {
+        for(int i = 0; i < kanas.size(); i++) {
+            System.out.println(getNomKana());
+            String mDrawableName = getNomKana();
+            int resID = r.getIdentifier(mDrawableName, "drawable", s);
+            Drawable drawable = r.getDrawable(resID);
+            imageKana.setImageDrawable(drawable);
+
+            indice++;
+        }
+    }*/
 }
