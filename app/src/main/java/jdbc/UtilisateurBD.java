@@ -3,11 +3,10 @@ package jdbc;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import jeu.kana.TypeKana;
+import kanamaster.kana.TypeKana;
 
 public class UtilisateurBD {
     private static Statement st;

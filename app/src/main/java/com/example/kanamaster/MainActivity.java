@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import jeu.kana.TypeKana;
+import kanamaster.kana.TypeKana;
 
 public class MainActivity extends AppCompatActivity {
 

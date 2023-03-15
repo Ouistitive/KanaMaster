@@ -12,10 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.lang.reflect.Type;
-
 import jdbc.UtilisateurBD;
-import jeu.kana.TypeKana;
+import kanamaster.kana.TypeKana;
 
 public class ScoreActivity extends AppCompatActivity {
 

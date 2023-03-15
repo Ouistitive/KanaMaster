@@ -6,8 +6,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import jeu.kana.Kana;
-import jeu.kana.TypeKana;
+import kanamaster.kana.Kana;
+import kanamaster.kana.TypeKana;
 
 public class KanaBD {
     private static Statement st;

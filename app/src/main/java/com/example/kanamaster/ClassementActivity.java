@@ -5,19 +5,14 @@ import androidx.core.content.ContextCompat;
 
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.sql.Array;
-import java.util.ArrayList;
 import java.util.Map;
 
 import jdbc.UtilisateurBD;
-import jeu.kana.TypeKana;
+import kanamaster.kana.TypeKana;
 
 public class ClassementActivity extends AppCompatActivity {
     TableLayout tableauHiragana, tableauKatakana, tableauKana;

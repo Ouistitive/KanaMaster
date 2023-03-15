@@ -1,11 +1,11 @@
-package jeu;
+package kanamaster;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import jdbc.KanaBD;
-import jeu.kana.Kana;
-import jeu.kana.TypeKana;
+import kanamaster.kana.Kana;
+import kanamaster.kana.TypeKana;
 
 public class BuilderKana {
 

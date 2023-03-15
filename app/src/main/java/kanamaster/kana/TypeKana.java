@@ -1,4 +1,4 @@
-package jeu.kana;
+package kanamaster.kana;
 
 public enum TypeKana {
     HIRAGANA("Hiragana"), KATAKANA("Katakana"), KANA("Kana");
