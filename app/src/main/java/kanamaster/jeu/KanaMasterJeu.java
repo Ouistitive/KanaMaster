@@ -72,7 +72,7 @@ public class KanaMasterJeu {
     }
 
     public String getNomKana() {
-        return type.toString().toLowerCase() + "_" + kanas.get(indice).getPrononciation().toLowerCase();
+        return kanas.get(indice).getType().toString().toLowerCase() + "_" + kanas.get(indice).getPrononciation().toLowerCase();
     }
 
     /**
@@ -98,8 +98,7 @@ public class KanaMasterJeu {
         return random;
     }
 
-    /*
-    public void test(Resources r, String s) {
+    /*public void test(Resources r, String s) {
         for(int i = 0; i < kanas.size(); i++) {
             System.out.println(getNomKana());
             String mDrawableName = getNomKana();
