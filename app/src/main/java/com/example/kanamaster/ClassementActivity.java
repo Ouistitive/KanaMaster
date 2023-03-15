@@ -15,22 +15,27 @@ import jdbc.UtilisateurBD;
 import kanamaster.kana.TypeKana;
 
 public class ClassementActivity extends AppCompatActivity {
-    TableLayout tableauHiragana, tableauKatakana, tableauKana;
+    TableLayout tableauHiragana, tableauKatakana, tableauKana; // Les tableaux pour afficher les classements
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classement);
 
-        tableauHiragana = (TableLayout)findViewById(R.id.tableauHiragana);
-        tableauKatakana = (TableLayout)findViewById(R.id.tableauKatakana);
-        tableauKana = (TableLayout)findViewById(R.id.tableauKana);
+        tableauHiragana = (TableLayout) findViewById(R.id.tableauHiragana);
+        tableauKatakana = (TableLayout) findViewById(R.id.tableauKatakana);
+        tableauKana = (TableLayout) findViewById(R.id.tableauKana);
 
         initialiserTableau(TypeKana.HIRAGANA, tableauHiragana);
         initialiserTableau(TypeKana.KATAKANA, tableauKatakana);
         initialiserTableau(TypeKana.KANA, tableauKana);
     }
 
+    /**
+     * @brief Insert les lignes dans le tableau en fonction de la position du joueur
+     * @param type : La categorie du tableau
+     * @param tl : Le tableau qui sera modifie
+     */
     private void initialiserTableau(TypeKana type, TableLayout tl) {
         Map<String, Integer> map = UtilisateurBD.selectionnerMeilleurScore(type);
 

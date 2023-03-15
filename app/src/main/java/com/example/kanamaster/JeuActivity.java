@@ -33,10 +33,9 @@ public class JeuActivity extends AppCompatActivity {
     private List<Button> choix; // Liste des boutons de choix
     private String strBouton, strScore; // Chaine de caracteres parametree pour le texte dans les boutons et pour le score
     private TextView texteChrono, texteScore; // TextView pour le chronometre du jeu
-    private ImageView imageKana;
-    private KanaMasterJeu kanaMaster;
-    ForegroundColorSpan fcsRed;
-
+    private ImageView imageKana; // Image du kana qui est a deviner
+    private KanaMasterJeu kanaMaster; // Le jeu
+    private ForegroundColorSpan fcsRed; // Pour marquer le texte du score en rouge
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +48,7 @@ public class JeuActivity extends AppCompatActivity {
 
         imageKana = (ImageView) findViewById(R.id.imageKana);
 
-        kanaMaster = new KanaMasterJeu(type, imageKana);
+        kanaMaster = new KanaMasterJeu(type);
 
         // On initialise les chaines
         strBouton = "%s (%s)";
@@ -87,10 +86,11 @@ public class JeuActivity extends AppCompatActivity {
         texteChrono = (TextView) findViewById(R.id.chronometre);
         lancerChronometre();
         modifierBoutons();
-
-        //test();
     }
 
+    /**
+     * @brief Met a jour le texte du score du joueur
+     */
     private void mettreAJourScoreJoueur() {
         String text = String.format(strScore, kanaMaster.getScoreJoueur());
         SpannableString ss = new SpannableString(text);
@@ -108,6 +108,10 @@ public class JeuActivity extends AppCompatActivity {
         modifierImage();
     }
 
+    /**
+     * @brief Modifie l'image du kana affiche a l ecran pour
+     * remplacer avec celui qui est a deviner
+     */
     private void modifierImage() {
         Resources res = getResources();
         String mDrawableName = kanaMaster.getNomKana();

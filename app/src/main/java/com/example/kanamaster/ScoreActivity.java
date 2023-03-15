@@ -17,9 +17,9 @@ import kanamaster.kana.TypeKana;
 
 public class ScoreActivity extends AppCompatActivity {
 
-    private TextView texteScore, texteAncienScore, texteCommentaire;
-    private Button rejouer;
-    private String nomU;
+    private TextView texteScore, texteAncienScore, texteCommentaire; // TextView du score obtenu, ancien score et commentaire
+    private Button rejouer; // Bouton pour rejouer, relancer l'activite principale
+    private String nomU; // Le nom utilisateur
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +59,12 @@ public class ScoreActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * @brief Modifie certains elements a l'ecran pour les mettre en rouge
+     * @param texte : Le texte dans la TextView
+     * @param tv : La texte view qui sera modifiee
+     * @param deb : La position a partir de laquelle le texte sera en rouge
+     */
     private void changerCouleurTexte(String texte, TextView tv, int deb) {
         SpannableString ss = new SpannableString(texte);
         SpannableStringBuilder ssb = new SpannableStringBuilder(texte);

@@ -9,7 +9,7 @@ import java.util.Map;
 import kanamaster.kana.TypeKana;
 
 public class UtilisateurBD {
-    private static Statement st;
+    private static Statement st; // Le statement pour faire les requetes a la base de donnees
 
     /**
      * @brief Verifie a partir d'un nom utilisateur et un mot de passe si il est dans la base de donnees
@@ -82,6 +82,12 @@ public class UtilisateurBD {
         return score;
     }
 
+    /**
+     * @brief Insert le nouveau record pour un joueur dans une categorie
+     * @param nomU : Le nom du joueur qui a fait le record
+     * @param score : Le score que le joueur a eu
+     * @param type : La categorie dans laquelle le score sera enregistre
+     */
     public static void insererNouveauRecord(String nomU, int score, TypeKana type) {
         st = ConnexionBD.connexionBD();
 
@@ -135,6 +141,7 @@ public class UtilisateurBD {
             e.printStackTrace();
         }
 
+        ConnexionBD.fermer();
         return map;
     }
 }

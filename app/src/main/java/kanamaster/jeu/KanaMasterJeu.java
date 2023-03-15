@@ -15,28 +15,35 @@ import kanamaster.kana.TypeKana;
 
 public class KanaMasterJeu {
     private TypeKana type; // Type de kana qui sera devine
-    private ImageView imageKana;
+    private ImageView imageKana; // Image du kana a deviner
     private int indice; // indice du kana a trouver
     private List<Kana> kanas; // Liste des kanas
     private Random random; // La graine aleatoire du jeu
-    private int scoreJoueur;
+    private int scoreJoueur; // Le score du joueur
 
 
-    public KanaMasterJeu(TypeKana type, ImageView imageKana) {
+    public KanaMasterJeu(TypeKana type) {
         this.type = type;
         this.random = new Random();
         this.indice = 0;
         this.scoreJoueur = 0;
-        this.imageKana = imageKana;
 
         kanas = BuilderKana.prepareKana(this.type);
         Collections.shuffle(kanas);
     }
 
+    /**
+     * @brief Increment le score du joueur
+     */
     public void incrementerScore() {
         this.scoreJoueur++;
     }
 
+    /**
+     * @brief Modifie le texte des 4 boutons pour correspondre a 4 propositions dont une vraie et trois fausses
+     * @param boutons : La liste des boutons
+     * @param strFormatBouton : La chaine parametree pour le format du texte dans les boutons
+     */
     public void modifierBouton(List<Button> boutons, String strFormatBouton) {
         if(indice >= kanas.size()) {
             reinitListe();
@@ -53,10 +60,17 @@ public class KanaMasterJeu {
         }
     }
 
+    /**
+     * @brief Incremente l'indice du jeu
+     */
     public void incrementerIndice() {
         indice++;
     }
 
+    /**
+     * @brief Retourne le score du joueur
+     * @return int : Le score du joueur
+     */
     public int getScoreJoueur() {
         return scoreJoueur;
     }
@@ -71,6 +85,10 @@ public class KanaMasterJeu {
         return String.format(strFormatBouton, kanas.get(indice).getPrononciation(), kanas.get(indice).getType()).equals(texte);
     }
 
+    /**
+     * @brief Retourne le nom du kana sous forme du nom de l'image
+     * @return String : le nom du kana
+     */
     public String getNomKana() {
         return kanas.get(indice).getType().toString().toLowerCase() + "_" + kanas.get(indice).getPrononciation().toLowerCase();
     }

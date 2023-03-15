@@ -13,16 +13,17 @@ import kanamaster.kana.TypeKana;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button boutonHiragana, boutonKatakana, boutonDeux, boutonClassement; // Les Buttons pour le choix du type de kanas a deviner
-    private String nomUtilisateur;
-    private ImageView boutonDeconnexion;
-    private TextView texteBienvenue;
+    private Button boutonHiragana, boutonKatakana, boutonDeux, boutonClassement; // Les Buttons pour le choix du type de kanas a deviner et le classement
+    private String nomUtilisateur; // Le nom du joueur
+    private ImageView boutonDeconnexion; // Image cliquable pour se deconnecter
+    private TextView texteBienvenue; // TextView du bienvenue pour afficher le nom utilisateur
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // On recupere le nom utilisateur de l activite precedente
         Bundle extras = getIntent().getExtras();
         nomUtilisateur = extras.getString("nomU");
 
@@ -92,6 +93,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * @brief Change d'activite pour remettre sur la connexion et inscription
+     */
     private void changerActiviteDeconnexion() {
         Intent intent = new Intent(MainActivity.this, ConnexionActivity.class);
         startActivity(intent);

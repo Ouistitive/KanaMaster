@@ -10,10 +10,10 @@ import com.example.kanamaster.JeuActivity;
 
 public class Compteur extends CountDownTimer {
     private final static int TEMPS_CHRONO = 10; // 180 secondes = 3 minutes
-    private final static int MILLISECONDE = 1000;
-    private final static int MINUTE = 60;
+    private final static int MILLISECONDE = 1000; // Le temps pour 1 seconde en milliseconde
+    private final static int MINUTE = 60; // Le nombre de secondes en minutes
     private int compteur; // Le compteur pour le chronometre
-    private TextView texteChronometre;
+    private TextView texteChronometre; // TextView qui sera modifiee pour afficher le chronometre a l'ecran
 
     public Compteur(TextView textView) {
         super(TEMPS_CHRONO * MILLISECONDE, MILLISECONDE);
@@ -25,6 +25,9 @@ public class Compteur extends CountDownTimer {
         super(millisInFuture, countDownInterval);
     }
 
+    /**
+     * @brief A chaque tick (= seconde), met a jour le chronometre a l'ecran
+     */
     @Override
     public void onTick(long l) {
         compteur--;
