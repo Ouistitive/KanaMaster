@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="espace_caractere_titre">0.13</dimen>
+    <dimen name="espace_caractere_bouton_mode_jeu">0.4</dimen>
+
+    <dimen name="hauteur_bouton_identification">55dp</dimen>
+    <dimen name="hauteur_bouton_mode_jeu">60dp</dimen>
+    <dimen name="hauteur_bouton_choix">75dp</dimen>
+
+    <dimen name="largeur_bouton_choix">180dp</dimen>
+
+    <dimen name="taille_texte_bouton_choix">16sp</dimen>
+</resources>

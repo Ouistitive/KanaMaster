@@ -7,47 +7,69 @@
     android:background="@color/couleur_principale_blanc"
     tools:context=".ScoreActivity">
 
-    <TextView
-        android:id="@+id/texteScore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Votre score : "
-        android:textSize="25dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
-        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/rectangle" />
 
     <TextView
-        android:id="@+id/texteMeilleurScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ancien record : "
-        android:textSize="20dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="250dp"
+        android:text="@string/resultat"
+        android:layout_marginTop="40dp"
+        android:textSize="30sp"
+        android:textColor="@color/couleur_principale_blanc"
+        android:textStyle="bold"
+        android:letterSpacing="@dimen/espace_caractere_titre"
         />
 
-    <TextView
-        android:id="@+id/texteCommentaire"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="20dp"
-        android:textStyle="italic"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="360dp"
-        />
+        android:orientation="vertical"
+        android:layout_marginTop="120dp"
+        android:gravity="center">
 
-    <Button
-        android:id="@+id/boutonRejouer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rejouer"
-        android:layout_centerHorizontal="true"
-        android:letterSpacing="0.4"
-        android:layout_marginTop="470dp"
-        android:height="55dp"
-        android:width="150dp"
-        />
+        <TextView
+            android:id="@+id/texteScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/votre_score"
+            android:gravity="center"
+            android:layout_marginTop="120dp"
+            android:textSize="25sp"
+            />
+
+        <TextView
+            android:id="@+id/texteMeilleurScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ancien_record"
+            android:textSize="20sp"
+            android:layout_marginTop="80dp"
+            />
+
+        <TextView
+            android:id="@+id/texteCommentaire"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20sp"
+            android:textStyle="italic"
+            android:layout_marginTop="50dp"
+            />
+
+        <Button
+            android:id="@+id/boutonRejouer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rejouer"
+            android:letterSpacing="@dimen/espace_caractere_bouton_mode_jeu"
+            android:layout_marginTop="50dp"
+            android:height="@dimen/hauteur_bouton_mode_jeu"
+            android:width="200dp"
+            />
+    </LinearLayout>
 
 </RelativeLayout>

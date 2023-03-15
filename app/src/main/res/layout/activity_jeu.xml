@@ -11,9 +11,9 @@
         android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Score : 0"
-        android:textSize="25dp"
-        android:layout_marginLeft="30dp"
+        android:text="@string/jeu_score"
+        android:textSize="25sp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="50dp"
         />
 
@@ -22,17 +22,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="xx:xx"
-        android:textSize="25dp"
-        android:layout_marginLeft="320dp"
+        android:textSize="25sp"
+        android:layout_marginStart="320dp"
         android:layout_marginTop="50dp"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Quel est ce kana ?"
+        android:text="@string/question_quel_kana"
         android:layout_centerHorizontal="true"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_marginTop="120dp"
         />
 
@@ -48,9 +48,11 @@
             android:layout_height="wrap_content"
             android:text=""
             android:layout_marginTop="500dp"
-            android:width="180dp"
-            android:height="75dp"
-            android:layout_marginRight="15dp"
+            android:width="@dimen/largeur_bouton_choix"
+            android:height="@dimen/hauteur_bouton_choix"
+            android:layout_marginEnd="15dp"
+            android:textStyle="bold"
+            android:textSize="@dimen/taille_texte_bouton_choix"
             />
 
         <Button
@@ -59,8 +61,10 @@
             android:layout_height="wrap_content"
             android:text=""
             android:layout_marginTop="500dp"
-            android:width="180dp"
-            android:height="75dp"
+            android:width="@dimen/largeur_bouton_choix"
+            android:height="@dimen/hauteur_bouton_choix"
+            android:textStyle="bold"
+            android:textSize="@dimen/taille_texte_bouton_choix"
             />
     </LinearLayout>
 
@@ -76,9 +80,11 @@
             android:layout_height="wrap_content"
             android:text=""
             android:layout_marginTop="580dp"
-            android:width="180dp"
-            android:height="75dp"
-            android:layout_marginRight="15dp"
+            android:width="@dimen/largeur_bouton_choix"
+            android:height="@dimen/hauteur_bouton_choix"
+            android:layout_marginEnd="15dp"
+            android:textStyle="bold"
+            android:textSize="@dimen/taille_texte_bouton_choix"
             />
 
         <Button
@@ -87,8 +93,10 @@
             android:layout_height="wrap_content"
             android:text=""
             android:layout_marginTop="580dp"
-            android:width="180dp"
-            android:height="75dp"
+            android:width="@dimen/largeur_bouton_choix"
+            android:height="@dimen/hauteur_bouton_choix"
+            android:textStyle="bold"
+            android:textSize="@dimen/taille_texte_bouton_choix"
             />
     </LinearLayout>
 

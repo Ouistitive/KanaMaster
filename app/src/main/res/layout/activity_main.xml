@@ -16,17 +16,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Mode de jeu"
+        android:text="@string/mode_de_jeu"
         android:layout_marginTop="40dp"
         android:textSize="30sp"
+        android:textColor="@color/couleur_principale_blanc"
+        android:textStyle="bold"
+        android:letterSpacing="@dimen/espace_caractere_titre"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Choisissez votre catégorie de jeu"
+        android:text="@string/choisir_categorie_jeu"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="200dp"
         android:textSize="20sp"
         />
 
@@ -47,10 +50,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:width="170dp"
-                android:text="Hiragana"
-                android:letterSpacing="0.5"
-                android:layout_marginRight="10dp"
-                android:height="60dp"
+                android:text="@string/hiragana"
+                android:letterSpacing="@dimen/espace_caractere_bouton_mode_jeu"
+                android:layout_marginEnd="10dp"
+                android:height="@dimen/hauteur_bouton_mode_jeu"
                 />
 
             <Button
@@ -58,9 +61,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:width="170dp"
-                android:text="Katakana"
-                android:letterSpacing="0.5"
-                android:height="60dp"
+                android:text="@string/katakana"
+                android:letterSpacing="@dimen/espace_caractere_bouton_mode_jeu"
+                android:height="@dimen/hauteur_bouton_mode_jeu"
                 />
         </LinearLayout>
 
@@ -70,9 +73,9 @@
             android:layout_height="wrap_content"
             android:width="230dp"
             android:layout_gravity="center"
-            android:text="Les deux"
-            android:letterSpacing="0.5"
-            android:height="60dp"
+            android:text="@string/kana"
+            android:letterSpacing="@dimen/espace_caractere_bouton_mode_jeu"
+            android:height="@dimen/hauteur_bouton_mode_jeu"
             />
     </LinearLayout>
 
@@ -80,9 +83,9 @@
         android:id="@+id/boutonClassement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Classement"
-        android:letterSpacing="0.5"
-        android:height="60dp"
+        android:text="@string/classement"
+        android:letterSpacing="@dimen/espace_caractere_bouton_mode_jeu"
+        android:height="@dimen/hauteur_bouton_mode_jeu"
         android:layout_marginTop="550dp"
         android:layout_centerHorizontal="true"
         />
@@ -90,6 +93,7 @@
     <ImageView
         android:id="@+id/boutonDeconnexion"
         android:layout_width="53dp"
+        android:width="170dp"
         android:layout_height="53dp"
         android:layout_marginTop="120dp"
         app:srcCompat="?attr/actionModeCloseDrawable" />

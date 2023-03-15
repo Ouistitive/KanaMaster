@@ -17,9 +17,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Inscription"
+        android:text="@string/inscription"
         android:layout_marginTop="40dp"
         android:textSize="30sp"
+        android:textColor="@color/couleur_principale_blanc"
+        android:textStyle="bold"
+        android:letterSpacing="@dimen/espace_caractere_titre"
         />
 
     <LinearLayout
@@ -33,14 +36,13 @@
         <ImageView
             android:layout_width="232dp"
             android:layout_height="126dp"
-            android:layout_centerHorizontal="true"
             app:srcCompat="@drawable/kanamaster_logo" />
 
         <EditText
             android:id="@+id/nomUtilisateur"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Nom d'utilisateur"
+            android:hint="@string/nom_utilisateur"
             android:height="48dp"
             android:width="150dp"
             android:layout_marginTop="20dp"
@@ -51,7 +53,7 @@
             android:id="@+id/motDePasse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Mot de passe"
+            android:hint="@string/mot_de_passe"
             android:height="48dp"
             android:width="150dp"
             android:layout_marginTop="20dp"
@@ -62,7 +64,7 @@
             android:id="@+id/motDePasseConfirmation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Confirmation"
+            android:hint="@string/confirmation"
             android:height="48dp"
             android:width="150dp"
             android:layout_marginTop="20dp"
@@ -75,7 +77,6 @@
             android:layout_height="wrap_content"
             android:text=""
             android:textColor="@color/couleur_principale_rouge"
-            android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:textSize="15sp"
             />
@@ -85,9 +86,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:width="160dp"
-            android:height="55dp"
-            android:text="S'inscrire"
-            android:layout_centerHorizontal="true"
+            android:height="@dimen/hauteur_bouton_identification"
+            android:text="@string/inscrire_souligne"
             android:layout_marginTop="10dp"
             />
     </LinearLayout>
@@ -96,7 +96,7 @@
         android:id="@+id/connecter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/connecter"
+        android:text="@string/connecter_souligne"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="590dp"
         android:textSize="20sp"

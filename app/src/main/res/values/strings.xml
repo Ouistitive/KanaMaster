@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">KanaMaster</string>
 
-    <string name="inscrire"><u>S\'inscrire</u></string>
-    <string name="connecter"><u>Se connecter</u></string>
+    <string name="inscrire_souligne"><u>S\'inscrire</u></string>
+    <string name="connecter_souligne"><u>Se connecter</u></string>
 
     <string name="commentaire_meilleur_score">"Nouveau record ! Bien joué !"</string>
     <string name="commentaire_pas_meilleure_score">"Dommage, peut être une prochaine fois !"</string>
@@ -11,4 +11,23 @@
     <string name="erreur_mot_de_passe_different">"Le mot de passe est différent de la confirmation"</string>
     <string name="erreur_nom_utilisateur_existe">"Cet utilisateur existe déjà"</string>
     <string name="erreur_connexion">"Le nom d'utilisateur ne correspond pas au mot de passe."</string>
+
+    <string name="question_quel_kana">Quel est ce kana ?</string>
+    <string name="jeu_score">Score : 0</string>
+    <string name="connexion">Connexion</string>
+    <string name="nom_utilisateur">Nom d\'utilisateur</string>
+    <string name="mot_de_passe">Mot de passe</string>
+    <string name="se_connecter">Se connecter</string>
+    <string name="inscription">Inscription</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="mode_de_jeu">Mode de jeu</string>
+    <string name="choisir_categorie_jeu">Choisissez votre catégorie de jeu</string>
+    <string name="hiragana">Hiragana</string>
+    <string name="katakana">Katakana</string>
+    <string name="kana">Les deux</string>
+    <string name="classement">Classement</string>
+    <string name="resultat">Résultat</string>
+    <string name="votre_score">Votre score :</string>
+    <string name="ancien_record">Ancien record :</string>
+    <string name="rejouer">Rejouer</string>
 </resources>
