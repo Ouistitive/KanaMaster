@@ -23,9 +23,9 @@ public class KanaBD {
         st = ConnexionBD.connexionBD();
 
         try {
-            rs = st.executeQuery("SELECT caractere, sonorite FROM Alphabet WHERE type ='Hiragana';");
+            rs = st.executeQuery("SELECT sonorite FROM Alphabet WHERE type ='Hiragana';");
             while (rs.next()) {
-                hiraganas.add(new Kana(rs.getString("caractere"), rs.getString("sonorite"), TypeKana.HIRAGANA));
+                hiraganas.add(new Kana(rs.getString("sonorite"), TypeKana.HIRAGANA));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -47,9 +47,9 @@ public class KanaBD {
         st = ConnexionBD.connexionBD();
 
         try {
-            rs = st.executeQuery("SELECT caractere, sonorite FROM Alphabet WHERE type ='Katakana';");
+            rs = st.executeQuery("SELECT sonorite FROM Alphabet WHERE type ='Katakana';");
             while (rs.next()) {
-                katakanas.add(new Kana(rs.getString("caractere"), rs.getString("sonorite"), TypeKana.KATAKANA));
+                katakanas.add(new Kana(rs.getString("sonorite"), TypeKana.KATAKANA));
             }
         } catch (SQLException e) {
             e.printStackTrace();

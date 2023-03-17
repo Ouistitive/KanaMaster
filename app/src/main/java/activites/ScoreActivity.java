@@ -1,4 +1,4 @@
-package com.example.kanamaster;
+package activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,8 @@ import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.kanamaster.R;
 
 import jdbc.UtilisateurBD;
 import kanamaster.kana.TypeKana;

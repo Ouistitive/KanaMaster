@@ -1,12 +1,7 @@
 package kanamaster.jeu;
 
-import android.content.DialogInterface;
 import android.os.CountDownTimer;
 import android.widget.TextView;
-
-import androidx.appcompat.app.AlertDialog;
-
-import com.example.kanamaster.JeuActivity;
 
 public class Compteur extends CountDownTimer {
     private final static int TEMPS_CHRONO = 10; // 180 secondes = 3 minutes

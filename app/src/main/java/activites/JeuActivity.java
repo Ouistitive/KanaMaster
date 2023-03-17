@@ -1,16 +1,13 @@
-package com.example.kanamaster;
+package activites;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContextWrapper;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
@@ -19,6 +16,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.kanamaster.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -74,10 +73,23 @@ public class JeuActivity extends AppCompatActivity {
                         kanaMaster.incrementerScore();
                         mettreAJourScoreJoueur();
                     }
-                    else
+                    else {
                         System.out.println("C PAS GOOD");
-                    kanaMaster.incrementerIndice();
+                        /*ObjectAnimator deplacementDroite = ObjectAnimator.ofFloat(view, "translationX", 100f);
+                        deplacementDroite.setDuration(500);
+                        ObjectAnimator deplacementGauche = ObjectAnimator.ofFloat(view, "translationX", -100f);
+                        deplacementGauche.setDuration(500);
 
+                        for(int i = 0; i < 10; i++) {
+                            if(i % 2 == 0)
+                                deplacementDroite.start();
+                            else
+                                deplacementGauche.start();
+                        }*/
+
+                    }
+
+                    kanaMaster.incrementerIndice();
                     modifierBoutons();
                 }
             });

@@ -1,4 +1,4 @@
-package com.example.kanamaster;
+package activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.os.StrictMode;
 import android.os.Build;
 import android.widget.TextView;
+
+import com.example.kanamaster.R;
 
 import jdbc.UtilisateurBD;
 

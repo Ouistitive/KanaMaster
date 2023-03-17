@@ -1,22 +1,12 @@
 package kanamaster.kana;
 
 public class Kana {
-    private String symbole; // Le symbole japonais du Kana
     private String prononciation; // La prononciation en romaji
     private TypeKana type; // Le type de Kana, hiragana ou katakana
 
-    public Kana(String symbole, String prononciation, TypeKana type) {
-        this.symbole = symbole;
+    public Kana(String prononciation, TypeKana type) {
         this.prononciation = prononciation;
         this.type = type;
-    }
-
-    /**
-     * @brief Retourne le symbole japonais du kana
-     * @return String : le symbole
-     */
-    public String getSymbole() {
-        return this.symbole;
     }
 
     /**

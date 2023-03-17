@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ClassementActivity">
+    tools:context="activites.ClassementActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,120 +14,205 @@
         tools:layout_editor_absoluteY="1dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-            android:layout_marginTop="100dp"
-            >
+            android:orientation="vertical">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/couleur_principale_rouge"
-                android:padding="10dp"
-                android:text="Hiragana"
-                android:textSize="30dp"
-                />
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@drawable/rectangle" />
 
-            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/tableauHiragana"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/classement"
+                    android:layout_marginTop="-80dp"
+                    android:textSize="30sp"
+                    android:textColor="@color/couleur_principale_blanc"
+                    android:textStyle="bold"
+                    android:letterSpacing="@dimen/espace_caractere_titre"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="100dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:textAlignment="center"
-                android:background="#0079D6">
+                android:layout_height="wrap_content"
+                tools:layout_editor_absoluteX="1dp"
+                tools:layout_editor_absoluteY="1dp"
+                android:orientation="vertical"
+                android:gravity="center">
 
-                <TableRow
-                    android:padding="5dp"
+                <TextView
+                    android:layout_margin="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hiragana"
+                    android:textSize="35sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/couleur_principale_rouge"
+                    android:textAlignment="center"
+                    />
+
+                <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/tableauHiragana"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    >
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="Pseudo" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="Score" />
-                </TableRow>
-            </TableLayout>
+                    android:layout_marginTop="0dp">
 
-            <TextView
+                    <TableRow
+                        android:padding="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/couleur_gris_fonce">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Pseudo"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:textColor="@color/couleur_principale_noir" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Score"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:textColor="@color/couleur_principale_noir" />
+                    </TableRow>
+                </TableLayout>
+
+                <TextView
+                    android:id="@+id/texteScoreHiragana"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_marginTop="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/katakana"
+                    android:textSize="35sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/couleur_principale_rouge"
+                    android:textAlignment="center"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginBottom="20dp"
+                    />
+
+                <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/tableauKatakana"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="0dp">
+
+                    <TableRow
+                        android:padding="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/couleur_gris_fonce"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Pseudo"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:textColor="@color/couleur_principale_noir" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Score"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:textColor="@color/couleur_principale_noir" />
+                    </TableRow>
+                </TableLayout>
+
+                <TextView
+                    android:id="@+id/texteScoreKatakana"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_marginTop="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kana"
+                    android:textSize="35sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/couleur_principale_rouge"
+                    android:textAlignment="center"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginBottom="20dp"
+                    />
+
+                <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/tableauKana"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="0dp"
+                    android:background="#0079D6">
+
+                    <TableRow
+                        android:padding="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/couleur_gris_fonce">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Pseudo"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:textColor="@color/couleur_principale_noir" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Score"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:textColor="@color/couleur_principale_noir" />
+                    </TableRow>
+                </TableLayout>
+
+                <TextView
+                    android:id="@+id/texteScoreKana"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_marginTop="10dp"
+                    />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/boutonRetour"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:background="@color/couleur_principale_rouge"
-                android:padding="10dp"
-                android:text="Katakana"
-                android:textSize="30dp"
-                android:layout_marginTop="100dp"
+                android:text="Retour"
+                android:layout_marginTop="50dp"
                 />
-
-            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/tableauKatakana"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="100dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:background="#0079D6">
-
-                <TableRow
-                    android:padding="5dp"
-                    >
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Pseudo" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Score" />
-                </TableRow>
-            </TableLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/couleur_principale_rouge"
-                android:padding="10dp"
-                android:text="Les deux"
-                android:textSize="30dp"
-                android:layout_marginTop="100dp"
-                />
-
-            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/tableauKana"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="100dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:background="#0079D6">
-
-                <TableRow
-                    android:padding="5dp"
-                    >
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Pseudo" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Score" />
-                </TableRow>
-            </TableLayout>
-
         </LinearLayout>
 
     </ScrollView>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/couleur_principale_blanc"
-    tools:context=".JeuActivity">
+    tools:context="activites.JeuActivity">
 
     <TextView
         android:id="@+id/score"

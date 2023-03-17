@@ -12,7 +12,8 @@ public class BuilderKana {
     /**
      * @brief Construit la liste des kanas selon le type de kana choisi
      * @param type : le type de kana
-     * @return List<Kana> : La liste de kana remplie*/
+     * @return List<Kana> : La liste de kana remplie
+     */
     public static List<Kana> prepareKana(TypeKana type) {
         List<Kana> kanas = new ArrayList<>();
 

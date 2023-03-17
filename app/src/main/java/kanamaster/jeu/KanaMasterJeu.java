@@ -1,7 +1,5 @@
 package kanamaster.jeu;
 
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -21,7 +19,6 @@ public class KanaMasterJeu {
     private Random random; // La graine aleatoire du jeu
     private int scoreJoueur; // Le score du joueur
 
-
     public KanaMasterJeu(TypeKana type) {
         this.type = type;
         this.random = new Random();
@@ -30,6 +27,11 @@ public class KanaMasterJeu {
 
         kanas = BuilderKana.prepareKana(this.type);
         Collections.shuffle(kanas);
+    }
+
+    public KanaMasterJeu(TypeKana type, Random r) {
+        this(type);
+        this.random = r;
     }
 
     /**
@@ -109,7 +111,7 @@ public class KanaMasterJeu {
      * @param exclu : la valeur interdite
      * @return un entier aleatoire different de exclu
      */
-    private int randomAvecExclusion(Random r, int deb, int fin, int exclu) {
+    public int randomAvecExclusion(Random r, int deb, int fin, int exclu) {
         int random = deb + r.nextInt(fin - deb + 1 - 1);
         if (random >= exclu)
             random++;

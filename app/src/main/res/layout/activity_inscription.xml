@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/couleur_principale_blanc"
-    tools:context=".InscriptionActivity">
+    tools:context="activites.InscriptionActivity">
 
     <View
         android:layout_width="match_parent"

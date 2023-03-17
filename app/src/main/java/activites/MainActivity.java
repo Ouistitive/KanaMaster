@@ -1,4 +1,4 @@
-package com.example.kanamaster;
+package activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.kanamaster.R;
 
 import kanamaster.kana.TypeKana;
 
