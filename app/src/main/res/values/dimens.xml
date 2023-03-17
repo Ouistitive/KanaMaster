@@ -10,4 +10,6 @@
     <dimen name="largeur_bouton_choix">180dp</dimen>
 
     <dimen name="taille_texte_bouton_choix">16sp</dimen>
+
+    <dimen name="largeur_tableau_classement">350dp</dimen>
 </resources>

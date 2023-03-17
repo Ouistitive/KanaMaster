@@ -91,5 +91,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="590dp"
         android:textSize="20sp"
+        android:textColor="@color/couleur_bleu"
         />
 </RelativeLayout>

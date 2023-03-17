@@ -62,33 +62,49 @@
 
                 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
                     android:id="@+id/tableauHiragana"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="0dp">
+                    android:layout_width="@dimen/largeur_tableau_classement"
+                    android:layout_height="match_parent">
 
                     <TableRow
-                        android:padding="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@color/couleur_gris_fonce">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Pseudo"
-                            android:textStyle="bold"
-                            android:textAlignment="center"
-                            android:textColor="@color/couleur_principale_noir" />
+                            android:padding="1dp"
+                            android:background="@drawable/tableautitre">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="Pseudo"
+                                android:textStyle="bold"
+                                android:textAlignment="center"
+                                android:textColor="@color/couleur_principale_noir"
+                                android:padding="5dp" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Score"
-                            android:textStyle="bold"
-                            android:textAlignment="center"
-                            android:textColor="@color/couleur_principale_noir" />
+                            android:padding="1dp"
+                            android:background="@drawable/tableautitre">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="Score"
+                                android:textStyle="bold"
+                                android:textAlignment="center"
+                                android:textColor="@color/couleur_principale_noir"
+                                android:padding="5dp" />
+                        </FrameLayout>
                     </TableRow>
                 </TableLayout>
 
@@ -114,33 +130,50 @@
 
                 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
                     android:id="@+id/tableauKatakana"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="0dp">
+                    android:layout_width="@dimen/largeur_tableau_classement"
+                    android:layout_height="match_parent">
 
                     <TableRow
-                        android:padding="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@color/couleur_gris_fonce"
-                        >
+                        android:background="@color/couleur_gris_fonce" >
 
-                        <TextView
+                        <FrameLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Pseudo"
-                            android:textStyle="bold"
-                            android:textAlignment="center"
-                            android:textColor="@color/couleur_principale_noir" />
-                        <TextView
+                            android:padding="1dp"
+                            android:background="@drawable/tableautitre">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="Pseudo"
+                                android:textStyle="bold"
+                                android:textAlignment="center"
+                                android:textColor="@color/couleur_principale_noir"
+                                android:padding="5dp" />
+
+                        </FrameLayout>
+
+                        <FrameLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Score"
-                            android:textStyle="bold"
-                            android:textAlignment="center"
-                            android:textColor="@color/couleur_principale_noir" />
+                            android:padding="1dp"
+                            android:background="@drawable/tableautitre" >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Score"
+                                android:textStyle="bold"
+                                android:textAlignment="center"
+                                android:textColor="@color/couleur_principale_noir"
+                                android:padding="5dp" />
+
+                        </FrameLayout>
                     </TableRow>
                 </TableLayout>
 
@@ -166,33 +199,50 @@
 
                 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
                     android:id="@+id/tableauKana"
-                    android:layout_width="match_parent"
+                    android:layout_width="@dimen/largeur_tableau_classement"
                     android:layout_height="match_parent"
                     android:layout_marginTop="0dp"
                     android:background="#0079D6">
 
                     <TableRow
-                        android:padding="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@color/couleur_gris_fonce">
 
-                        <TextView
+                        <FrameLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Pseudo"
-                            android:textStyle="bold"
-                            android:textAlignment="center"
-                            android:textColor="@color/couleur_principale_noir" />
-                        <TextView
+                            android:padding="1dp"
+                            android:background="@drawable/tableautitre">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Pseudo"
+                                android:textStyle="bold"
+                                android:textAlignment="center"
+                                android:textColor="@color/couleur_principale_noir"
+                                android:padding="5dp" />
+
+                        </FrameLayout>
+
+                        <FrameLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Score"
-                            android:textStyle="bold"
-                            android:textAlignment="center"
-                            android:textColor="@color/couleur_principale_noir" />
+                            android:padding="1dp"
+                            android:background="@drawable/tableautitre">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Score"
+                                android:textStyle="bold"
+                                android:textAlignment="center"
+                                android:textColor="@color/couleur_principale_noir"
+                                android:padding="5dp" />
+                        </FrameLayout>
                     </TableRow>
                 </TableLayout>
 

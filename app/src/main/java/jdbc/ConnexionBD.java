@@ -1,5 +1,7 @@
 package jdbc;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -40,7 +42,7 @@ public class ConnexionBD {
     }
 
     /**
-     * Ferme la connexion a la base de donnees
+     * @briefFerme la connexion a la base de donnees
      */
     public static void fermer() {
         try {
@@ -49,5 +51,32 @@ public class ConnexionBD {
         catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * @brief Hash le texte entre pour le securiser dans la base de donnees
+     * @param txt : Le texte a hasher
+     * @return String : Le texte hashe
+     */
+    public static String hash(String txt) {
+        String mdpGenere = null;
+
+        try
+        {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            md.update(txt.getBytes());
+
+            byte[] bytes = md.digest();
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < bytes.length; i++) {
+                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+            }
+
+            mdpGenere = sb.toString();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
+        return mdpGenere;
     }
 }

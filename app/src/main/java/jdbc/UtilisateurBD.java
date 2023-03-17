@@ -24,7 +24,7 @@ public class UtilisateurBD {
             ResultSet res = st.executeQuery("SELECT motDePasse FROM Utilisateur WHERE nomUtilisateur = '" + nomU + "';");
             if(res.next()) {
                 String motDePasse = res.getString(1);
-                valide = motDePasse.equals(mdp);
+                valide = motDePasse.equals(ConnexionBD.hash(mdp));
             }
         }
         catch(SQLException e) {
@@ -110,7 +110,7 @@ public class UtilisateurBD {
         st = ConnexionBD.connexionBD();
 
         try {
-            st.executeUpdate("INSERT INTO Utilisateur VALUES ('" + nomU + "', '" + mdp + "', 0, 0, 0);");
+            st.executeUpdate("INSERT INTO Utilisateur VALUES ('" + nomU + "', '" + ConnexionBD.hash(mdp) + "', 0, 0, 0);");
 
         }
         catch (SQLException e) {
@@ -134,7 +134,6 @@ public class UtilisateurBD {
             while(rs.next()) {
                 String s = rs.getString("nomUtilisateur");
                 map.put(s, rs.getInt("MeilleurScore" + type.toString()));
-                System.out.println(s);
             }
         }
         catch(SQLException e) {
