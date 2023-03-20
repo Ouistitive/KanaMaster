@@ -42,7 +42,6 @@
         android:layout_height="200dp"
         android:layout_marginTop="220dp"
         android:layout_centerHorizontal="true"
-        android:layout_weight="1"
         app:srcCompat="@drawable/hiragana_a" />
 
     <LinearLayout
@@ -108,7 +107,4 @@
             android:textSize="@dimen/taille_texte_bouton_choix"
             />
     </LinearLayout>
-
-
-
 </RelativeLayout>

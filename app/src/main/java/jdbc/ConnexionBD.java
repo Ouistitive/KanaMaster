@@ -42,7 +42,7 @@ public class ConnexionBD {
     }
 
     /**
-     * @briefFerme la connexion a la base de donnees
+     * @brief Ferme la connexion a la base de donnees
      */
     public static void fermer() {
         try {
