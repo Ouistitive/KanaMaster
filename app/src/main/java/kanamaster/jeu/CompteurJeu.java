@@ -3,20 +3,20 @@ package kanamaster.jeu;
 import android.os.CountDownTimer;
 import android.widget.TextView;
 
-public class Compteur extends CountDownTimer {
-    private final static int TEMPS_CHRONO = 10; // 180 secondes = 3 minutes
+public class CompteurJeu extends CountDownTimer {
+    private final static int TEMPS_CHRONO = 180; // 180 secondes = 3 minutes
     private final static int MILLISECONDE = 1000; // Le temps pour 1 seconde en milliseconde
     private final static int MINUTE = 60; // Le nombre de secondes en minutes
     private int compteur; // Le compteur pour le chronometre
     private TextView texteChronometre; // TextView qui sera modifiee pour afficher le chronometre a l'ecran
 
-    public Compteur(TextView textView) {
+    public CompteurJeu(TextView textView) {
         super(TEMPS_CHRONO * MILLISECONDE, MILLISECONDE);
         texteChronometre = textView;
         compteur = TEMPS_CHRONO;
     }
 
-    public Compteur(long millisInFuture, long countDownInterval) {
+    public CompteurJeu(long millisInFuture, long countDownInterval) {
         super(millisInFuture, countDownInterval);
     }
 

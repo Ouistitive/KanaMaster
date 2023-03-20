@@ -3,11 +3,13 @@ package activites;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.ObjectAnimator;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
@@ -23,7 +25,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import kanamaster.jeu.Compteur;
+import animations.TremblementAnimation;
+import kanamaster.jeu.CompteurJeu;
 import kanamaster.jeu.KanaMasterJeu;
 import kanamaster.kana.TypeKana;
 
@@ -69,28 +72,29 @@ public class JeuActivity extends AppCompatActivity {
             b.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(kanaMaster.verification(b.getText().toString(), strBouton)) {
+                    boolean correct = kanaMaster.verification(b.getText().toString(), strBouton);
+                    if(correct) {
                         kanaMaster.incrementerScore();
                         mettreAJourScoreJoueur();
                     }
                     else {
                         System.out.println("C PAS GOOD");
-                        /*ObjectAnimator deplacementDroite = ObjectAnimator.ofFloat(view, "translationX", 100f);
-                        deplacementDroite.setDuration(500);
-                        ObjectAnimator deplacementGauche = ObjectAnimator.ofFloat(view, "translationX", -100f);
-                        deplacementGauche.setDuration(500);
-
-                        for(int i = 0; i < 10; i++) {
-                            if(i % 2 == 0)
-                                deplacementDroite.start();
-                            else
-                                deplacementGauche.start();
-                        }*/
-
                     }
 
-                    kanaMaster.incrementerIndice();
-                    modifierBoutons();
+                    if(correct) {
+                        kanaMaster.incrementerIndice();
+                        modifierBoutons();
+                    }
+                    else {
+                        mettreBoutonsCliquables(false);
+                        new TremblementAnimation(view) {
+                            public void onFinish() {
+                                kanaMaster.incrementerIndice();
+                                modifierBoutons();
+                                mettreBoutonsCliquables(true);
+                            }
+                        }.start();
+                    }
                 }
             });
         }
@@ -109,6 +113,12 @@ public class JeuActivity extends AppCompatActivity {
         SpannableStringBuilder ssb = new SpannableStringBuilder(text);
         ssb.setSpan(fcsRed, 7, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         texteScore.setText(ssb);
+    }
+
+    private void mettreBoutonsCliquables(boolean estCliquable) {
+        for(Button b : choix) {
+            b.setEnabled(estCliquable);
+        }
     }
 
     /**
@@ -136,7 +146,7 @@ public class JeuActivity extends AppCompatActivity {
      * @brief Lance le chronometre et l'affiche dans le TextView
      */
     private void lancerChronometre() {
-        new Compteur(texteChrono) {
+        new CompteurJeu(texteChrono) {
             public void onFinish() {
                 AlertDialog.Builder builder = new AlertDialog.Builder(JeuActivity.this);
 
