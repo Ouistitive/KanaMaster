@@ -3,13 +3,11 @@ package activites;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.animation.ObjectAnimator;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
@@ -77,9 +75,6 @@ public class JeuActivity extends AppCompatActivity {
                         kanaMaster.incrementerScore();
                         mettreAJourScoreJoueur();
                     }
-                    else {
-                        System.out.println("C PAS GOOD");
-                    }
 
                     if(correct) {
                         kanaMaster.incrementerIndice();
@@ -115,6 +110,10 @@ public class JeuActivity extends AppCompatActivity {
         texteScore.setText(ssb);
     }
 
+    /**
+     * @brief Modifie l'etat des boutons en les rendant cliquable ou non
+     * @param estCliquable : l'etat que vont avoir les boutons
+     */
     private void mettreBoutonsCliquables(boolean estCliquable) {
         for(Button b : choix) {
             b.setEnabled(estCliquable);

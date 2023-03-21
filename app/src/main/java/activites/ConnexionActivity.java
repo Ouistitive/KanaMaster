@@ -49,7 +49,7 @@ public class ConnexionActivity extends AppCompatActivity {
                 }
 
                 if(UtilisateurBD.identification(nomUtilisateur.getText().toString(), motDePasse.getText().toString())) {
-                    changerActivite(MainActivity.class);
+                    passerMainActivity();
                 }
                 else {
                     texteErreur.setText(R.string.erreur_connexion);
@@ -59,7 +59,7 @@ public class ConnexionActivity extends AppCompatActivity {
 
         texteInscrire.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                changerActivite(InscriptionActivity.class);
+                passerInscriptionActivity();
             }
         });
 
@@ -77,16 +77,23 @@ public class ConnexionActivity extends AppCompatActivity {
     }
 
     /**
-     * @brief Change d'activite et supprime l'ancienne
-     * @param activite : la nouvelle activite a afficher
+     * @brief Passe a l'activite inscription et supprime l'ancienne
      */
-    private void changerActivite(Class<? extends AppCompatActivity> activite) {
-        Intent intent = new Intent(ConnexionActivity.this, activite);
-
-        if(activite == MainActivity.class)
-            intent.putExtra("nomU", nomUtilisateur.getText().toString());
-
+    private void passerInscriptionActivity() {
+        Intent intent = new Intent(ConnexionActivity.this, InscriptionActivity.class);
         startActivity(intent);
         finish();
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+    }
+
+    /**
+     * @brief Passe a l'activite principale et supprime l'ancienne
+     */
+    private void passerMainActivity() {
+        Intent intent = new Intent(ConnexionActivity.this, MainActivity.class);
+        intent.putExtra("nomU", nomUtilisateur.getText().toString());
+        startActivity(intent);
+        finish();
+        overridePendingTransition(R.anim.glissement_gauche, R.anim.fondu_disparition);
     }
 }

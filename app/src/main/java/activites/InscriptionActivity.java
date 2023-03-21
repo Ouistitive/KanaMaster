@@ -33,7 +33,7 @@ public class InscriptionActivity extends AppCompatActivity {
 
         connecter.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                changerActivite(ConnexionActivity.class);
+                passerConnexionActivity();
             }
         });
 
@@ -62,7 +62,7 @@ public class InscriptionActivity extends AppCompatActivity {
                 // On verifie que l'utilisateur n'existe pas deja
                 if(UtilisateurBD.nomUtilisateurValide(nomUtilisateur.getText().toString())) {
                     UtilisateurBD.insererUtilisateur(nomUtilisateur.getText().toString(), motDePasse.getText().toString());
-                    changerActivite(MainActivity.class);
+                    passerMainActivity();
                 }
                 else {
                     texteErreur.setText(R.string.erreur_nom_utilisateur_existe);
@@ -87,16 +87,22 @@ public class InscriptionActivity extends AppCompatActivity {
     }
 
     /**
-     * @brief Change d'activite et supprime l'ancienne
-     * @param activite : la nouvelle activite
+     * @brief Passe a l'activite principale et supprime l'ancienne
      */
-    private void changerActivite(Class<? extends AppCompatActivity> activite) {
-        Intent intent = new Intent(InscriptionActivity.this, activite);
-
-        if(activite == MainActivity.class)
-            intent.putExtra("nomU", nomUtilisateur.getText().toString());
-
+    private void passerMainActivity() {
+        Intent intent = new Intent(InscriptionActivity.this, MainActivity.class);
+        intent.putExtra("nomU", nomUtilisateur.getText().toString());
         startActivity(intent);
         finish();
+    }
+
+    /**
+     * @brief Passe a l'activite connexion et supprime l'ancienne
+     */
+    private void passerConnexionActivity() {
+        Intent intent = new Intent(InscriptionActivity.this, ConnexionActivity.class);
+        startActivity(intent);
+        finish();
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 }

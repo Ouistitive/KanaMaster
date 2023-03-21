@@ -12,8 +12,6 @@ import android.widget.TextView;
 
 import com.example.kanamaster.R;
 
-import org.w3c.dom.Text;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,10 +20,10 @@ import kanamaster.kana.TypeKana;
 
 public class ClassementActivity extends AppCompatActivity {
     private TableLayout tableauHiragana, tableauKatakana, tableauKana; // Les tableaux pour afficher les classements
-    private Button boutonRetour;
-    private TableRow.LayoutParams paramTextView;
-    private String nomUtilisateur;
-    private Map<TypeKana, Integer> dico;
+    private Button boutonRetour; // Le bouton de retour pour revenir sur la MainActivity
+    private TableRow.LayoutParams paramTextView; // Parametres pour les TextView dans les tableaux
+    private String nomUtilisateur; // Le nom utilisateur de la personne connectee
+    private Map<TypeKana, Integer> dico; // Le dictionnaire des types avec leur id dans le XML
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,5 +120,6 @@ public class ClassementActivity extends AppCompatActivity {
      */
     private void retour() {
         finish();
+        overridePendingTransition(R.anim.fondu_apparition, R.anim.glissement_droit);
     }
 }

@@ -4,7 +4,7 @@ import android.os.CountDownTimer;
 import android.widget.TextView;
 
 public class CompteurJeu extends CountDownTimer {
-    private final static int TEMPS_CHRONO = 180; // 180 secondes = 3 minutes
+    private final static int TEMPS_CHRONO = 120; // 120 secondes = 2 minutes
     private final static int MILLISECONDE = 1000; // Le temps pour 1 seconde en milliseconde
     private final static int MINUTE = 60; // Le nombre de secondes en minutes
     private int compteur; // Le compteur pour le chronometre

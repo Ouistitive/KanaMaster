@@ -102,5 +102,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, ConnexionActivity.class);
         startActivity(intent);
         finish();
+        overridePendingTransition(R.anim.fondu_apparition, R.anim.glissement_droit);
     }
 }

@@ -91,7 +91,7 @@
             android:width="@dimen/longueur_bouton_connexion"
             android:height="@dimen/hauteur_bouton_identification"
             android:text="@string/inscrire_souligne"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="14dp"
             />
     </LinearLayout>
 
