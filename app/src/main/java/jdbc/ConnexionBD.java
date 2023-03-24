@@ -9,17 +9,17 @@ import java.sql.Statement;
 
 public class ConnexionBD {
 
-    private static String ip = "192.168.1.12";
+    private static String ip = "192.168.1.12"; // 192.168.1.12 | sql7.freemysqlhosting.net
 
     private static String port = "3306";
 
-    private static String nomBD = "KanaMaster";
+    private static String nomBD = "KanaMaster"; // KanaMaster | sql7608023
 
     private static String url = "jdbc:mysql://"+ ip + ":" + port + "/"+ nomBD + "?useSSL=false&allowPublicKeyRetrieval=true";
 
-    private static final String user = "android";
+    private static final String user = "android"; // android | sql7608023
 
-    private static final String pass = "root";
+    private static final String pass = "root"; // root | qwfyL3VPu3
 
     private static Connection connexion;
 

@@ -10,7 +10,7 @@ public class TremblementAnimation extends CountDownTimer {
     private final static int TEMPS_DEPLACEMENT = 40; // Le temps de glissement dans l'animation
     private final static float DISTANCE_DEPLACEMENT = 10f; // La distance de glissement de l'objet anime
     private View objetTremble; // L'objet qui sera anime
-    private boolean deplacementVersGauche; // Si le deplacement est vers la gauche²
+    private boolean deplacementVersGauche; // Si le deplacement est vers la gauche
 
     public TremblementAnimation(View v) {
         this(MS_AVANT_FIN, MS_INTERVALLE);

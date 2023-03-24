@@ -37,8 +37,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Bienvenue"
+            android:textColor="@color/couleur_principale_noir"
             android:layout_marginTop="50dp"
-            android:textSize="30sp"
+            android:textSize="25sp"
             />
 
         <TextView
@@ -46,7 +47,7 @@
             android:layout_height="wrap_content"
             android:text="@string/choisir_categorie_jeu"
             android:layout_marginTop="30dp"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="italic"
             />
     </LinearLayout>
@@ -67,7 +68,6 @@
                 android:id="@+id/boutonHiragana"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:width="@dimen/longueur_bouton_mode_jeu"
                 android:text="@string/hiragana"
                 android:letterSpacing="@dimen/espace_caractere_bouton_mode_jeu"
                 android:layout_marginEnd="10dp"
@@ -78,7 +78,6 @@
                 android:id="@+id/boutonKatakana"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:width="@dimen/longueur_bouton_mode_jeu"
                 android:text="@string/katakana"
                 android:letterSpacing="@dimen/espace_caractere_bouton_mode_jeu"
                 android:height="@dimen/hauteur_bouton_mode_jeu"
@@ -103,7 +102,6 @@
         android:layout_height="wrap_content"
         android:text="@string/classement"
         android:letterSpacing="@dimen/espace_caractere_bouton_mode_jeu"
-        android:width="@dimen/longueur_bouton_mode_jeu"
         android:height="@dimen/hauteur_bouton_mode_jeu"
         android:layout_marginTop="550dp"
         android:layout_centerHorizontal="true"

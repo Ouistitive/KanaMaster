@@ -54,11 +54,11 @@
             android:id="@+id/texteCommentaire"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="20sp"
-            android:textStyle="italic"
             android:layout_marginTop="50dp"
-            />
+            android:text=""
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="italic" />
 
         <Button
             android:id="@+id/boutonRejouer"

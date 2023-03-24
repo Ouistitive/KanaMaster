@@ -31,7 +31,6 @@ public class KanaBD {
             e.printStackTrace();
         }
 
-
         ConnexionBD.fermer();
         return hiraganas;
     }

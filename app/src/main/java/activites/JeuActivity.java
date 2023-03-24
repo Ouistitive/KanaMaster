@@ -46,7 +46,7 @@ public class JeuActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         type = (TypeKana) extras.get("type");
 
-        imageKana = (ImageView) findViewById(R.id.imageKana);
+        imageKana = findViewById(R.id.imageKana);
 
         kanaMaster = new KanaMasterJeu(type);
 
@@ -55,16 +55,16 @@ public class JeuActivity extends AppCompatActivity {
         strScore = "Score : %d";
         fcsRed = new ForegroundColorSpan(getColor(R.color.couleur_principale_rouge));
 
-        texteScore = (TextView) findViewById(R.id.score);
+        texteScore = findViewById(R.id.score);
 
         mettreAJourScoreJoueur();
 
         // Stocke les boutons dans une liste
         choix = new ArrayList<>();
-        choix.add((Button) findViewById(R.id.bouton_1));
-        choix.add((Button) findViewById(R.id.bouton_2));
-        choix.add((Button) findViewById(R.id.bouton_3));
-        choix.add((Button) findViewById(R.id.bouton_4));
+        choix.add(findViewById(R.id.bouton_1));
+        choix.add(findViewById(R.id.bouton_2));
+        choix.add(findViewById(R.id.bouton_3));
+        choix.add(findViewById(R.id.bouton_4));
 
         for(Button b : choix) {
             b.setOnClickListener(new View.OnClickListener() {
@@ -94,7 +94,7 @@ public class JeuActivity extends AppCompatActivity {
             });
         }
 
-        texteChrono = (TextView) findViewById(R.id.chronometre);
+        texteChrono = findViewById(R.id.chronometre);
         lancerChronometre();
         modifierBoutons();
     }
