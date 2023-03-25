@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import animations.ClignotementAnimation;
 import animations.TremblementAnimation;
 import kanamaster.jeu.CompteurJeu;
 import kanamaster.jeu.KanaMasterJeu;
@@ -145,7 +146,7 @@ public class JeuActivity extends AppCompatActivity {
      * @brief Lance le chronometre et l'affiche dans le TextView
      */
     private void lancerChronometre() {
-        new CompteurJeu(texteChrono) {
+        new CompteurJeu(texteChrono, getResources().getColor(R.color.couleur_principale_rouge), getResources().getColor(R.color.couleur_principale_noir)) {
             public void onFinish() {
                 AlertDialog.Builder builder = new AlertDialog.Builder(JeuActivity.this);
 

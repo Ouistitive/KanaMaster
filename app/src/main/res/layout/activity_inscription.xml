@@ -88,6 +88,7 @@
             android:id="@+id/sinscrire"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/couleur_principale_blanc"
             android:width="@dimen/longueur_bouton_connexion"
             android:height="@dimen/hauteur_bouton_identification"
             android:text="@string/inscrire_souligne"

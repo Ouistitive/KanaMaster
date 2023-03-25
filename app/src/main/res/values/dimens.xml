@@ -11,7 +11,7 @@
 
     <dimen name="largeur_bouton_choix">180dp</dimen>
 
-    <dimen name="taille_texte_bouton_choix">10sp</dimen>
+    <dimen name="taille_texte_bouton_choix">11sp</dimen>
 
     <dimen name="longueur_input_connexion">200dp</dimen>
     <dimen name="hauteur_input_connexion">50dp</dimen>
