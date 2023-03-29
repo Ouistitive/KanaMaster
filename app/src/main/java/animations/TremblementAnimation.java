@@ -41,7 +41,7 @@ public class TremblementAnimation extends CountDownTimer {
      * @brief Deplace l'objet anime vers la gauche ou vers la droite d'une certaine distance et temps
      * @brief versGauche : l'objet va se deplacer vers la gauche
      */
-    private void animationTremblement(boolean versGauche) {
+    public void animationTremblement(boolean versGauche) {
         ObjectAnimator deplacementDroite = ObjectAnimator.ofFloat(objetTremble, "translationX", versGauche ? DISTANCE_DEPLACEMENT : -DISTANCE_DEPLACEMENT);
         deplacementDroite.setDuration(TEMPS_DEPLACEMENT);
         deplacementDroite.start();

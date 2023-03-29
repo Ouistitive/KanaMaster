@@ -1,5 +1,7 @@
 package kanamaster.jeu;
 
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -7,6 +9,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+import activites.JeuActivity;
 import kanamaster.BuilderKana;
 import kanamaster.kana.Kana;
 import kanamaster.kana.TypeKana;
@@ -118,11 +121,11 @@ public class KanaMasterJeu {
         return random;
     }
 
-    /*public void test(Resources r, String s) {
+    /*public void test(Resources r) {
         for(int i = 0; i < kanas.size(); i++) {
             System.out.println(getNomKana());
             String mDrawableName = getNomKana();
-            int resID = r.getIdentifier(mDrawableName, "drawable", s);
+            int resID = r.getIdentifier(mDrawableName, "drawable", JeuActivity.class.getPackageName());
             Drawable drawable = r.getDrawable(resID);
             imageKana.setImageDrawable(drawable);
 

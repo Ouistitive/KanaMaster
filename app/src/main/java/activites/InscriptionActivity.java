@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.kanamaster.R;
 
 import jdbc.UtilisateurBD;
+import jdbc.UtilisateurExistantException;
 
 public class InscriptionActivity extends AppCompatActivity {
 
@@ -59,12 +60,17 @@ public class InscriptionActivity extends AppCompatActivity {
                     texteErreur.setText(R.string.erreur_mot_de_passe_different);
                     return;
                 }
+
                 // On verifie que l'utilisateur n'existe pas deja
-                if(UtilisateurBD.nomUtilisateurValide(nomUtilisateur.getText().toString())) {
-                    UtilisateurBD.insererUtilisateur(nomUtilisateur.getText().toString(), motDePasse.getText().toString());
-                    passerMainActivity();
+                try {
+                    String s1 = nomUtilisateur.getText().toString().substring(0, 1).toUpperCase();
+                    String s2 = nomUtilisateur.getText().toString().substring(1).toLowerCase();
+                    String nomUtilisateurStr = s1 + s2;
+
+                    UtilisateurBD.insererUtilisateur(nomUtilisateurStr, motDePasse.getText().toString());
+                    passerMainActivity(nomUtilisateurStr);
                 }
-                else {
+                catch (UtilisateurExistantException e) {
                     texteErreur.setText(R.string.erreur_nom_utilisateur_existe);
                 }
             }
@@ -89,9 +95,9 @@ public class InscriptionActivity extends AppCompatActivity {
     /**
      * @brief Passe a l'activite principale et supprime l'ancienne
      */
-    private void passerMainActivity() {
+    private void passerMainActivity(String nomU) {
         Intent intent = new Intent(InscriptionActivity.this, MainActivity.class);
-        intent.putExtra("nomU", nomUtilisateur.getText().toString());
+        intent.putExtra("nomU", nomU);
         startActivity(intent);
         finish();
     }

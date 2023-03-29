@@ -48,8 +48,11 @@ public class ConnexionActivity extends AppCompatActivity {
                     return;
                 }
 
-                if(UtilisateurBD.identification(nomUtilisateur.getText().toString(), motDePasse.getText().toString())) {
-                    passerMainActivity();
+                String s1 = nomUtilisateur.getText().toString().substring(0, 1).toUpperCase();
+                String s2 = nomUtilisateur.getText().toString().substring(1).toLowerCase();
+                String nomUtilisateurStr = s1 + s2;
+                if(UtilisateurBD.identification(nomUtilisateurStr, motDePasse.getText().toString())) {
+                    passerMainActivity(nomUtilisateurStr);
                 }
                 else {
                     texteErreur.setText(R.string.erreur_connexion);
@@ -89,9 +92,9 @@ public class ConnexionActivity extends AppCompatActivity {
     /**
      * @brief Passe a l'activite principale et supprime l'ancienne
      */
-    private void passerMainActivity() {
+    private void passerMainActivity(String nomU) {
         Intent intent = new Intent(ConnexionActivity.this, MainActivity.class);
-        intent.putExtra("nomU", nomUtilisateur.getText().toString());
+        intent.putExtra("nomU", nomU);
         startActivity(intent);
         finish();
         overridePendingTransition(R.anim.glissement_gauche, R.anim.fondu_disparition);

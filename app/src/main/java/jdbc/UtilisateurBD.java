@@ -106,7 +106,10 @@ public class UtilisateurBD {
      * @param nomU : Le nom utilisateur
      * @param mdp : le mot de passe
      */
-    public static void insererUtilisateur(String nomU, String mdp) {
+    public static void insererUtilisateur(String nomU, String mdp) throws UtilisateurExistantException {
+        if(!nomUtilisateurValide(nomU))
+            throw new UtilisateurExistantException();
+
         st = ConnexionBD.connexionBD();
 
         try {
