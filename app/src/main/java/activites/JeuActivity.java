@@ -13,11 +13,8 @@ import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.kanamaster.R;
@@ -26,7 +23,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import animations.ClignotementAnimation;
 import animations.TremblementAnimation;
 import kanamaster.jeu.CompteurJeu;
 import kanamaster.jeu.KanaMasterJeu;

@@ -1,7 +1,5 @@
 package kanamaster.jeu;
 
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -9,8 +7,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-import activites.JeuActivity;
-import kanamaster.BuilderKana;
+import kanamaster.InitialiserKana;
 import kanamaster.kana.Kana;
 import kanamaster.kana.TypeKana;
 
@@ -28,7 +25,7 @@ public class KanaMasterJeu {
         this.indice = 0;
         this.scoreJoueur = 0;
 
-        kanas = BuilderKana.prepareKana(this.type);
+        kanas = InitialiserKana.prepareKana(this.type);
         Collections.shuffle(kanas);
     }
 

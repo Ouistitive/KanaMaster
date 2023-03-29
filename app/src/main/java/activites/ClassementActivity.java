@@ -30,10 +30,10 @@ public class ClassementActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classement);
 
-        tableauHiragana = (TableLayout) findViewById(R.id.tableauHiragana);
-        tableauKatakana = (TableLayout) findViewById(R.id.tableauKatakana);
-        tableauKana = (TableLayout) findViewById(R.id.tableauKana);
-        boutonRetour = (Button) findViewById(R.id.boutonRetour);
+        tableauHiragana = findViewById(R.id.tableauHiragana);
+        tableauKatakana = findViewById(R.id.tableauKatakana);
+        tableauKana = findViewById(R.id.tableauKana);
+        boutonRetour = findViewById(R.id.boutonRetour);
 
         paramTextView = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT, 1);
 
@@ -98,7 +98,7 @@ public class ClassementActivity extends AppCompatActivity {
         }
 
         if(nonClasse) {
-            TextView tv = (TextView) findViewById(dico.get(type));
+            TextView tv = findViewById(dico.get(type));
             tv.setText("Votre meilleur record : " + UtilisateurBD.recupererMeilleurScore(nomUtilisateur, type));
         }
     }

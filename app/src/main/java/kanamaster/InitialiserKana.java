@@ -7,7 +7,7 @@ import jdbc.KanaBD;
 import kanamaster.kana.Kana;
 import kanamaster.kana.TypeKana;
 
-public class BuilderKana {
+public class InitialiserKana {
 
     /**
      * @brief Construit la liste des kanas selon le type de kana choisi
