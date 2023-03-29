@@ -14,7 +14,7 @@ CREATE TABLE Utilisateur(
 INSERT INTO Utilisateur(nomUtilisateur, motDePasse, meilleurScoreHiragana, meilleurScoreKatakana, meilleurScoreKana) VALUES
 ("Tony", "eee7ac208064d408e84ab5e26d24b278", 27, 32, 28),
 ("Etienne", "e3370a0bb2c2ea49f93b68c0649d57b6", 28, 16, 29),
-("Noé", "22894f328ab8d094dd1b118351342958", 20, 30, 13),
+("Noe", "22894f328ab8d094dd1b118351342958", 20, 30, 13),
 ("Armando", "b486dc5ce21f64603337b7b356c4c6d7", 27, 21, 17),
 ("Raphael", "84fc7720d5e7bf07115d91762843b8ad", 28, 22, 16),
 ("Ilo", "f13ec61dd34461e0c05be45d436b9732", 14, 24, 33),
